@@ -8,7 +8,7 @@ layout: default
 * James Chapman and Ulf Norell, [Dependently typed programming in Agda](http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf)
 
 * Chapter 4 and 5 of Flemming Nielson, Hanne R. Nielson, and Chris Hankin [Principles of Program Analysis Corr. 2nd printing], ISBN: 3-540-65410-0.
-If you do not own the book, you can replace Chapter 5 with [Type and Effect Systems](http://www2.imm.dtu.dk/~fnie/Papers/NiNi99tes.pdf)  and  Neil D. Jones and Flemming Nielson [Section 1 and 2 of Abstract Interpretation: a Semantics-based Tool for Program Analysis](https://www.researchgate.net/profile/Neil_Jones3/publication/234803097_Abstract_interpretation_a_semantics-based_tool_for_program_analysis/links/0046352cac9b729460000000.pdf)
+If you do not own the book, you can replace Chapter 5 with Flemming Nielson and Hanne R. Nielson [Type and Effect Systems](http://www2.imm.dtu.dk/~fnie/Papers/NiNi99tes.pdf)  and  Neil D. Jones and Flemming Nielson [Section 1 and 2 of Abstract Interpretation: a Semantics-based Tool for Program Analysis](https://www.researchgate.net/profile/Neil_Jones3/publication/234803097_Abstract_interpretation_a_semantics-based_tool_for_program_analysis/links/0046352cac9b729460000000.pdf)
 
 * Jurriaan Hage, Stefan Holdermans, and Arie Middelkoop. [A generic usage analysis with subeffect qualifiers](http://dl.acm.org/citation.cfm?doid=1291151.1291189)
 
