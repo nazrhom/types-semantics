@@ -7,6 +7,11 @@ layout: default
 
 * James Chapman and Ulf Norell, [Dependently typed programming in Agda](http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf)
 
+* Chapter 4 and 5 of Flemming Nielson, Hanne R. Nielson, and Chris Hankin [Principles of Program Analysis Corr. 2nd printing], ISBN: 3-540-65410-0.
+If you do not own the book, you can replace Chapter 5 with [Type and Effect Systems] (http://www2.imm.dtu.dk/~fnie/Papers/NiNi99tes.pdf), and Section 1 and 2 of Neil D. Jones and Flemming Nielson (https://www.researchgate.net/profile/Neil_Jones3/publication/234803097_Abstract_interpretation_a_semantics-based_tool_for_program_analysis/links/0046352cac9b729460000000.pdf).
+
+* Jurriaan Hage, Stefan Holdermans, and Arie Middelkoop. [A generic usage analysis with subeffect qualifiers].  (http://dl.acm.org/citation.cfm?doid=1291151.1291189)
+
 ## Using Agda
 
 * [Emacs cheatsheet](http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf)
@@ -20,7 +25,9 @@ layout: default
 * Robert Harper; Practical Foundations of Programming Languages
 * Thierry Coquand; [A normalization proof for Gödel's System T](http://www.cse.chalmers.se/~coquand/norm.ps)
 * José Pedro Rodrigues Magalhães; [A Formal Comparison of Approaches to Datatype-Generic Programming](http://dreixel.net/research/pdf/fcadgp.pdf)
-
+* Jens Palsberg. [Type-based analysis and applications].  (http://dx.doi.org/10.1145/379605.379635)
+* Kim Marriott [Abstract Interpretation: A Theory Of Approximate Computation] (http://www.springerlink.com/content/w02v86n1272jl768/). 
+    
 ## Research Papers
 
 
