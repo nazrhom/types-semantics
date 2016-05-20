@@ -101,7 +101,9 @@ Nil <*> x = Nil
 Cons f fs <*> Cons x xs = Cons (f x) (fs <*> xs)
 
 vmap : {a b : Set} {n : Nat} → (a → b) → Vec a n → Vec b n
-vmap f xs = pure f <*> xs
+vmap f xs = pure f <*> xs -- Equivalent to Cons (f x) (vmap f xs)
+
+-- 3 / 3 Correct: 1 point
 
 ----------------------
 ----- Exercise 2 -----
@@ -119,6 +121,9 @@ madd Nil yss = yss
 madd (Cons xs xss) (Cons ys yss) = let ar = zipWith (_+_) xs ys  -- Additions are done row by row
                                    in Cons ar (madd xss yss)
 
+
+-- Equivalent to (pure (\xs ys -> (pure _+_ <*> xs) <*> ys)  <*> xss) <*> yss
+
 foo : Matrix Nat 10 10
 foo = pure (pure 0)
 
@@ -131,12 +136,18 @@ idMatrix {Succ n} = let fr = Cons (Succ Zero) (replicate n Zero) -- The first ro
                                                                  -- idMatrix of one order lower is appended
                                                                  -- with zeroes at the front of each row.
 
+-- Equivalent to (but less elegant than) Cons (Cons 1 (pure 0)) (vmap (Cons 0) idMatrix)
+
 -- Define matrix transposition
 transpose : {n m : Nat} {a : Set} → Matrix a m n → Matrix a n m
 transpose Nil                    = pure Nil
-transpose (Cons Nil xss)         = Nil
+transpose (Cons Nil xss)         = Nil -- Case is missing from the solution, do i subtract points for this?
 transpose (Cons (Cons x xs) xss) = let fr = Cons x (vmap head xss)       -- New first row
                                    in Cons fr (transpose (Cons xs (vmap tail xss))) 
+
+-- Equivalent to (but less elegant than) (pure Cons <*> xs) <*> transpose xss
+
+-- 3 / 3 Correct: 1 point
 
 ----------------------
 ----- Exercise 3 -----
@@ -152,20 +163,27 @@ plan {Succ n} = Cons Fz ( vmap Fs (plan))
 
 -- Define a forgetful map, mapping Fin to Nat
 forget : {n : Nat} → Fin n → Nat
-forget (Fz {n}) = n
-forget (Fs x)   = (forget x)
+forget (Fz {n}) = n           -- Should be Zero
+forget (Fs x)   = (forget x)  -- Should be Succ (forget x)
 
 -- There are several ways to embed Fin n in Fin (Succ n).  Try to come
 -- up with one that satisfies the correctness property below (and
 -- prove that it does).
 embed : {n : Nat} → Fin n → Fin (Succ n)
-embed (Fz {n}) = Fs Fz 
+embed (Fz {n}) = Fs Fz        -- Should be Fz
 embed (Fs x)   = Fs (embed x)
 
 correct : {n : Nat} → (i : Fin n) → forget i == forget (embed i)
-correct {Zero} ()
+correct {Zero} ()          -- Cas is missing from the solution, but it is unreachable.
 correct {Succ n} Fz = Refl
-correct (Fs i) = correct i
+correct (Fs i) = correct i -- Should be cong Succ (correct i)
+
+-- 1 / 4 Correct: 0.25 Points
+-- Ex 3.3 correct for 50%: 1/8 point
+-- Ex 4.4 correct for 50%: 1/8 point
+--
+-- 1/4 + 1/8 + 1/8 = 2/4 = 0.5 Points total
+
 
 ----------------------
 ----- Exercise 4 -----
@@ -191,11 +209,16 @@ cmp (Succ .(y + Succ k)) (Succ y) | GreaterThan k = GreaterThan k
 -- Use the cmp function you defined above to define the absolute
 -- difference between two natural numbers.
 difference : (n m : Nat) → Nat
-difference Zero     y = y
+difference Zero     y = y           -- Missing from the solution
 difference (Succ x) y with cmp x y
-difference (Succ n) .(n + Succ k) | LessThan k    = k
+difference (Succ n) .(n + Succ k) | LessThan k    = k -- Should be Succ k
 difference (Succ y) .y            | Equal         = Zero
-difference (Succ .(y + Succ k)) y | GreaterThan k = k
+difference (Succ .(y + Succ k)) y | GreaterThan k = k -- Should be Succ k
+
+-- 1 / 2 Correct: 0.5 Points
+-- Ex 4.2 correct for 33%: 1/6 point
+--
+-- 1/2 + 1/6 = 0.67 points total
 
 ----------------------
 ----- Exercise 5 -----
@@ -228,6 +251,8 @@ distributivity Zero     m k = Refl
 distributivity (Succ n) m k = let ih = distributivity n m k
                               in {!!}
 
+-- 3 / 4 correct: 0.75 Points
+
 ----------------------
 ----- Exercise 6 -----
 ----------------------
@@ -255,6 +280,7 @@ SubListAntiSym (Keep xs) ys = {!!}
 SubListAntiSym (Drop xs) ys = {!!}
 -- SubListAntiSym = {!lastiger!}
 
+-- 1 / 3 Correct: 0.33 points
 
 ----------------------
 ----- Exercise 7 -----
@@ -297,6 +323,9 @@ leq<= (leq-succ i) = leq<= i
 <=leq Zero m x = leq-zero
 <=leq (Succ n) Zero x = {!!}
 <=leq (Succ n) (Succ m) x = leq-succ (<=leq n m x)
+
+-- 5 / 6 Correct: 0.83 points
+
 
 ----------------------
 ----- Exercise 7 -----
@@ -352,6 +381,8 @@ step3  ito {P} h = {!!}
 
 -- HARDER: show that these are equivalent to Pierces law:
 piercesLaw = {P Q : Set} → ((P → Q) → P) → P
+
+-- 3 / 6 correct: .50 points
 
 ----------------------
 ----- Exercise 9 -----
@@ -409,3 +440,21 @@ compile (Val x) = PUSH x HALT
 --BONUS exercises: extend the language with new constructs for let
 --bindings, variables, new operators, mutable references, assignment,
 --functions, ...
+
+-- 2 / 3 correct: 0.67 Points
+
+
+-- SUMMARY
+-- Exercise 1:  1.00 point
+-- Exercise 2:  1.00 points
+-- Exercise 3:  0.50 points
+-- Exercise 4:  0.67 points
+-- Exercise 5:  0.75 points
+-- Exercise 6:  0.33 points
+-- Exercise 7:  0.83 points
+-- Exercise 8:  0.50 points
+-- Exercise 9:  0.67 points
+--
+-- Base points: 1.00 points
+--------------------------- +
+--              7.25 points

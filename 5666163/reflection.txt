@@ -1,0 +1,18 @@
+# Reflection
+
+Martijn Fleuren - 5666163
+
+I marked myself by giving 1 point per exercise. Every function is worth
+1/(amount of functions in the exercise) and each correct line is worth
+(1/amount of correct lines in the solution). I simply added them all to get to
+the final amount. Although i think i graded myself fairly, i feel like i
+should have earned less points because in some cases i found a solution by
+trial-and-error rather than by understanding what is really going on.
+
+I think i made good progress, but i am still not up to the desired level due
+to the steep learning curve and my background. I will try to make appointments
+to work on future exercises at Joao's office so i can get some additional
+support when i need it.
+
+Deficiencies i had for this exercise are in logic and in lack of understanding
+of the applicative functor. I will work on those.
