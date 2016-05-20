@@ -89,6 +89,9 @@ vmap : {a b : Set} {n : Nat} -> (a -> b) -> Vec a n -> Vec b n
 vmap f Nil = Nil
 vmap f (Cons x xs) = Cons (f x) (vmap f xs)
 
+
+-- 3 / 3 correct: 1 point
+
 ----------------------
 ----- Exercise 2 -----
 ----------------------
@@ -131,6 +134,9 @@ ex2 = transpose ex1
 ex3 : ∀ n -> Matrix Nat n n
 ex3 n = idMatrix
 
+
+-- 3 / 3 correct: 1 point
+
 ----------------------
 ----- Exercise 3 -----
 ----------------------
@@ -162,6 +168,8 @@ correct : {n : Nat} -> (i : Fin n) -> forget i == forget (embed i)
 correct Fz = Refl
 correct (Fs f) = cong Succ (correct f)
 
+-- 4 / 4 correct: 1 point
+
 ----------------------
 ----- Exercise 4 -----
 ----------------------
@@ -190,6 +198,8 @@ difference n m with cmp n m
 difference n .(n + Succ k) | LessThan k = (Succ k)
 difference m .m | Equal = 0
 difference .(m + Succ k) m | GreaterThan k = (Succ k)
+
+-- 2 / 2 correct: 1 point
 
 ----------------------
 ----- Exercise 5 -----
@@ -251,6 +261,8 @@ distributivity (Succ n) m k =
   (m + (n * m)) + (k + (n * k))
   ∎
 
+-- 4 / 4 correct: 1 point
+
 ----------------------
 ----- Exercise 6 -----
 ----------------------
@@ -270,7 +282,10 @@ SubListTrans : {a : Set} {xs ys zs : List a} -> SubList xs ys -> SubList ys zs -
 SubListTrans sxy Base = sxy
 SubListTrans (Keep sxy) (Keep syz) = Keep (SubListTrans sxy syz)
 SubListTrans (Drop sxy) (Keep syz) = Drop (SubListTrans sxy syz)
-SubListTrans sxy (Drop syz) = Drop (SubListTrans sxy syz)
+SubListTrans sxy (Drop syz) = Drop (SubListTrans sxy syz) -- I cannot find the similarity between
+                                                          -- this and the solution, i think this
+                                                          -- only drops one where the solution drops
+                                                          -- until it finds a keep?
 
 -- Drop the left element and is still a sublist
 drop-SL-Left : ∀ {A : Set} {x : A}{xs ys : List A} -> SubList (Cons x xs) ys -> SubList xs ys
@@ -295,6 +310,7 @@ SubListAntiSym (Drop sxy) (Keep syz) = cong (Cons _) (SubListAntiSym (drop-SL-Le
 SubListAntiSym (Drop sxy) (Drop syz) with SubListAntiSym (drop-SL-Left syz) (drop-SL-Left sxy)
 SubListAntiSym (Drop sxy) (Drop syz) | Refl = magic (not_SL syz)
 
+-- 3 / 3 correct: 1 point
 
 ----------------------
 ----- Exercise 7 -----
@@ -336,6 +352,8 @@ leq<= (LEQSucc leq) = leq<= leq
 <=leq Zero m p = LEQZero
 <=leq (Succ n) Zero ()
 <=leq (Succ n) (Succ m) p = LEQSucc (<=leq n m p)
+
+-- 6 / 6 correct: 1 point
 
 ----------------------
 ----- Exercise 7 -----
@@ -412,6 +430,8 @@ eq3'' : piercesLaw -> impliesToOr
 eq3'' pl {P} {Q} imp = orCase Inl (λ p → Inr (imp p)) (pl (λ z → Inl (λ x → z (Inr x))))
 
 -- Of course we can have used step1, step2 and step3.
+
+-- 6 / 6 correct: 1 point ( I have insufficient knowledge to grade this exercise :( )
 
 ----------------------
 ----- Exercise 9 -----
@@ -518,6 +538,10 @@ lemma' c (Val x) s   = Refl
 correctness' : ∀ {n} (e : Expr) (s : MyStack n) -> Cons (eval e) s == exec' (compile' e) s
 correctness' e s = lemma' HALT e s
 
+
+-- 3 / 3 correct: 1 point
+-- I like the way the stack is fixed with Vectors instead of my own Maybe approach
+
 --BONUS exercises: extend the language with new constructs for let
 --bindings, variables, new operators, mutable references, assignment,
 --functions, ...
@@ -559,3 +583,26 @@ lemma'' c ctx (Var x) s = Refl
 
 correctness'' : ∀ {n m} (c : Ctx m) (e : MyExpr m) (s : MyStack n) -> Cons (eval' c e) s == exec' (compile'' c e) s
 correctness'' e s = lemma'' HALT e s
+
+-- SUMMARY
+--
+-- Exercise 1:  1.00 point
+-- Exercise 2:  1.00 point
+-- Exercise 3:  1.00 point
+-- Exercise 4:  1.00 point
+-- Exercise 5:  1.00 point
+-- Exercise 6:  1.00 point
+-- Exercise 7:  1.00 point
+-- Exercise 8:  1.00 point
+-- Exercise 9:  1.00 point
+--
+-- Base points: 1.00 point
+-------------------------- +
+--             10.00 points
+--
+-- Also, bonus exercises (Variables indexable by Fin, an additional
+-- compile function and a proof (3 main functions, let's say 0.5
+-- points each?))
+-- 
+--              1.50 points
+--             11.50 points
