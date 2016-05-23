@@ -1,0 +1,31 @@
+Exercise   | Grade | Points | Remarks
+-----------------------------------
+1          | 3/3   | 1.0    |
+-----------------------------------
+2          | 3/3   | 1.0    | By using the "generate" function that he defines,
+                              the definition of idMatrix resembles very close the
+                              mathematical definition. Very nice.
+-----------------------------------
+3          | 4/4   | 1.0    |
+-----------------------------------
+4          | 2/2   | 1.0    |
+-----------------------------------
+5          | 4/4   | 1.0    | The proof of "associativity2" seems to be a bit longer
+                              that it should be comparing it with the standart soultion.
+-----------------------------------
+6          | 3/3   | 1.0    | In "subListTrans" pattern matching on the second
+                              sublist instead of the first one reduces the number
+                              of cases to prove.
+-----------------------------------
+7          | 6/6   | 1.0    |
+-----------------------------------
+8          | 5/5   | 1.0    | The 5/5 is because we have the three steps (3/5) and
+                              then one fifth for each direction of the equivalence
+                              with Pierce's law.
+-----------------------------------
+9          | 3/4   | 0.75   | I give 3/4 for the definition of exec, compile and
+                              correctness. The remaining quarter is for a solution that remove the case of
+                              non-sense stack. He avoids to use the type system to delete those cases
+                              and just pushing 0's onto the stack when necessary
+----------------------------------
+Total (+1) | --    | 9.75   |

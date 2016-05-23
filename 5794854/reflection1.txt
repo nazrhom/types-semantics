@@ -1,0 +1,37 @@
+Exercise   | Grade | Points | Remarks
+-----------------------------------
+1          | 3/3   | 1.0    | 
+-----------------------------------
+2          | 3/3   | 1.0    | The standart solution for "madd" is more elegant than mine because
+                            | it doesn't use explicit recursion on the definition.
+                            | It is nice that in the proposed solution, the IdMatrix is created by
+                            | pushing new columns in front of the smaller matrix, while mine pushes
+                            | columns to the back. Of course is more efficient to do it as the former
+                            | way.
+-----------------------------------
+3          | 4/4   | 1.0    |
+-----------------------------------
+4          | 2/2   | 1.0    |
+-----------------------------------
+5          | 4/4   | 1.0    | My proof of plusCommutes seems to be far more complicate than it should be,
+                            | because I used induction on both arguments instead of just doing it on the
+                            | first one.
+                            | In the proof of distributivity, it really improves readability the use of the
+                            | notation given in class over the use of "let ... in ..".
+                            | 
+-----------------------------------
+6          | 3/3   | 1.0    | My solution to "SubListTrans" is a little bit shorter that the standart one, as I did pattern
+                              matching on the second sublist instead of the first one, reducing the number of cases to prove.
+-----------------------------------
+7          | 6/6   | 1.0    |
+-----------------------------------
+8          | 5/5   | 1.0    | The 5/5 is because we have the three steps (3/5) and
+                              then one fifth for each direction of the equivalence  
+                              with Pierce's law.
+-----------------------------------
+9          | 4/4   | 1.0   | My solution looks exactly the same as the proposed one. 
+----------------------------------
+Total (+1) | --    | 10.0  | 
+
+In think I did a pretty good work on solving the exercise, nevertheless some of my definitions
+are a little bit overcomplicated (plusCommutes) or not as efficient as they should be (idMatrix).
