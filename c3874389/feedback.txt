@@ -1,0 +1,21 @@
+Almost every exercise has been completed fully (except the binary_inverse)
+Every proof is succinct with no unnecessary steps.
+As I did not complete the binary exercises some longer proofs
+	were harder to follow. Some contained some techniques I did not
+	yet encounter in first chapters (inversion, pose, remember), it shouldn't
+	be necessary probably. Comments could help understand the long statements 
+	to be proven.
+
+(As there was no model solution, and I did not finish binary_inverse myself I
+could not provide answers for that)
+
+The grading was not specified clearly.
+Induction chapter:
+	* 11 (required) exercises
+	* 28 stars
+List chapter:
+	* 6 (required) exercises
+	* 18 stars
+Which totals at 46 stars, 41 were earned. Grade:
+	* No free points assumed: 8.9
+	* Usual 1 free point: 9.0
