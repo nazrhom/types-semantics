@@ -1,0 +1,40 @@
+# Exercise 1
+
+1/1, perfect.
+
+# Exercise 2
+
+1/1, all functions correct. Transpose is more complicated than it needs to be.
+See model solution.
+
+# Exercise 3
+
+1/1, all functions correct. Plan has a redundant case distinction.
+
+# Exercise 4
+
+1/1, perfect.
+
+# Exercise 5
+
+1/1. The distributivity proof could be a bit simpler.
+
+# Exercise 6
+
+1/1. SubListAntiSym takes a different approach than the model solution, but it
+is correct nevertheless.
+
+# Exercise 7 (labelled second 7 in original exercise)
+
+1/1. Proved more implications that strictly necessary, but the proof is still
+valid. Also proved equivalence with Peirce's Law.
+
+# Exercise 8 (labelled first 7 in original exercise)
+
+1/1, perfect.
+
+# Exercise 9
+
+1/1. Defining away the stack underflow problem is not the approach the model
+solution takes and it is perhaps cheating a bit, but it does resolve the
+issue, and it does not affect the proofs.

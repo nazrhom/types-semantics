@@ -1,0 +1,66 @@
+# Exercise 1
+
+1/1, perfect. (Nit: you do have trailing whitespace.)
+
+# Exercise 2
+
+1/1. Your transpose is concise and clear.
+
+Note:
+
+    vmap2 f xs ys = (pure f <*> xs) <*> ys
+
+# Exercise 3
+
+1/1, perfect.
+
+# Exercise 4
+
+1/1, perfect.
+
+# Exercise 5
+
+1/1. The lemmas help to keep the proofs clean.
+
+# Exercise 6
+
+1/1, perfect. (Nit: xs = Cons x xs is an unfortunate choice of names.)
+
+# Exercise 7 (labelled second 7 in original exercise)
+
+0.5/1, some parts missing.
+
+ * notNotP: ok.
+
+ * notNotExcludedMiddle: ok.
+
+ * doubleNegation -> excludedMiddle: ok.
+
+ * excludedMiddle -> impliesToOr: contains hole. Your approach was right, but
+   getting Agda to accept the implicit arguments is a bit of a hassle.
+
+ * impliesToOr -> doubleNegation: contains hole.
+   The approach I took is the following: assuming that impliesToOr holds, we can
+   prove excludedMiddle by plugging in P -> P. Assuming Not Not P, we can use
+   excludedMiddle to prove P.  Either we have a P already and we are done, or we
+   have a Not P, which contradicts the assumption that Not Not P, so from the
+   contradiction P follows.
+
+ * Peirce's Law: not implemented.
+
+Note: you don't need curly brackets around a lambda.
+
+# Exercise 8 (labelled first 7 in original exercise)
+
+1/1, perfect.
+
+# Exercise 9
+
+0.5/1, correctness proof incomplete.
+
+ * Did resolve stack underflow problem properly.
+
+ * I find it a bit confusing that the left-hand side and right-hand side of ++
+   have different types. This also makes the subCorrect lemma a bit awkward. In
+   that respect the model solution is clearer, where the Expr -> Cmd translation
+   is an explicit step.
