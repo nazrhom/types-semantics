@@ -1,0 +1,17 @@
+All exercises were completed, except for the binary inverse exercise,
+which was partially completed. The hardest part, proving the conversion
+theorem, was missing. There were also some easier solutions for certain
+theorems and some used tactics were not necessary (in the easier
+solutions). Some comments should also have been added where some of these
+new tactics were used.
+
+A part from the above, the solutions to the exercises were done well.
+
+There were a total of 17 exercises with a combined total of 45 stars.
+40 stars were definitely earned.
+The binary inverse exercise was partially completed with the hardest part 
+left open. 
+Only 2/5 stars are therefore counted.
+
+A total of 42 stars were earned.
+Grade: 9.3
