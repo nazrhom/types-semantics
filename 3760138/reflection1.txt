@@ -1,0 +1,44 @@
+Exercise 1:
+Perfect
+1 pt
+
+Exercise 2:
+Used vmap instead of pure in madd, but it is also correct. Model solution may be more elegant since it doesn't use recursion and doesn't split the case. 
+idMatrix had the right idea, but used incorrect values (all ones). 
+Transpose is correct, but very explicit and uses helper function (tail). Model solution more elegant.
+0.75 pt (due to idMatrix)
+
+Exercise 3:
+Perfect
+1 pt
+
+Exercise 4:
+Difference should return "Succ k" instead of "k" in both nontrivial cases. 
+0.5 pt (due to difference)
+
+Exercise 5:
+Distributivity proof very long and hard to read, but correct. Modes solution uses a much better notation though.
+1 pt
+
+Exercise 6:
+SubListTrans does not use the same method as the model solution, but it is correct and probably more elegant since it does not use a helper function.
+Contradiction found differently than model solution does, also less general.
+1 pt
+
+Exercise 7:
+Uses different definition of LEQ than model solution. 
+However, it is still correct, and equality to the <= is proven correctly. 
+1 pt
+
+Exercise 8:
+Seems correct, but the model solution does not provide a solution to this exercise, so I cannot be sure.
+1 pt 
+
+Exercise 9:
+Cmd and Stack types kept the same, while model solution changed them.
+Rest of exercise seems correct, but the exec function can perform an ADD command on a stack with less than two values on it, by simply 'erroring' and returning the stack. This is probably not intended. 
+0.5 pt
+
+8.75 total
+
+
