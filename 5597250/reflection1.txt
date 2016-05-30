@@ -1,0 +1,15 @@
+Feedback from: 5597250
+Feedback to: 5597250
+1: 1
+2: 1
+3: .65
+4: .75
+5: 1
+6: 1
+7: 1
+8: 1
+9: 2/3
+
+Grade: 8 + 1 = 9
+
+Most of the exercises are correct, however, there are some missing and incorrect cases. Specially exercise 3,4 and 9. Exercise 3 was harder for me to grade, because the idea of the exercise was not that clear for me. However, all the function are proving. I subtracted .35. In exercise four, in the difference function it missed at some cases Succ. 
