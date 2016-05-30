@@ -1,0 +1,6 @@
+I managed to solve all exercises including those marked "optional".
+While working on the exercises, it was a bit unfortunate that they are
+scattered throughout the whole text of the book, making it hard to switch
+back and forth between different locations in the files.
+
+Grade: 10
