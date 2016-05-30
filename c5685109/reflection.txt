@@ -1,0 +1,10 @@
+All the proofs were completed with the exception of binary_inverse.
+
+Regarding that exercise a proof is provided but 3 key lemmas which are probably
+almost as strong as the whole proof on their own are left as an exercise to the reader.
+
+Since this is a self evaluation I will not count stars explicitly, I feel that the
+grade that more accurately represents doing most of the work except for the really
+hard parts is a 9.
+
+Grade: 9
