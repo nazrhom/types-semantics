@@ -1,0 +1,21 @@
+Many exercises were left incomplete. I calculated the grade by dividing the
+number of earned stars for the number of total stars. All exercises which were not
+attempted have been counted as 0 stars. I added a small comments to justify the
+number of deducted stars in cases of partial or incorrect solutions.
+
+Induction: 13/32 stars
+
+ - mult_comm: 1/4 Both proofs are incomplete, the provided comments shed some light
+   on the error that was committed but the length of the provided solution should
+   have been a sign that the chosen path was not the best.
+
+ - more_exercises: 2/3 Not completed and some proofs may be a bit longer than required
+
+Lists: 11/38 stars
+	list_funs: 0/2 no tests run and only nonzeros is defined
+
+Most of the exercises marked as optional were skipped. From my understanding of
+the instructions those were not to be considered as such. Considering the
+instructions were a bit unclear on this i rounded up the grade a bit.
+
+Grade: 4
