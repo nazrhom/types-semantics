@@ -30,6 +30,18 @@ If you do not own the book, you can replace Chapter 5 with Flemming Nielson and 
     
 ## Research Papers
 
+* John Launchbury; [A natural semantics for Lazy Evaluation](http://www.cse.chalmers.se/edu/year/2010/course/DAT140_Types/Launchbury.pdf)
+* Jean-Louis Krivine, [Call-by-name lambda-calculus machine](http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf)
+or alternatively, [From mathematics to Abstract Machine: A formal derivation of an executable Krivine machine](http://eptcs.web.cse.unsw.edu.au/paper.cgi?MSFP2012.10)
+* Nils Anders Danielsson; [Operational semantics using the partiality monad](http://www.cse.chalmers.se/~nad/publications/danielsson-semantics-partiality-monad.pdf)
+* Phil Wadler; [Theorems for free!](http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf), Renate Eilers and Yfke Dulek
+* Vazou, Rondon and Jhala; [Abstract Reﬁnement Types](http://goto.ucsd.edu/~rjhala/liquid/abstract_refinement_types.pdf)
+* Peter Landin; [The next 700 programming languages]()
+* Dave van Horn and Matthew Might; [Abstract abstract machines](http://dl.acm.org/citation.cfm?id=1863553)
+* Jeroen Weijers, Jurriaan Hage, and Stefan Holdermans; [Security Type Error Diagnosis for Higher-Order Polymorphic Languages](http://www.sciencedirect.com/science/article/pii/S0167642314001518)
+* Jurriaan Hage and Stefan Holdermans; [Heap recycling for lazy languages](http://dl.acm.org/citation.cfm?doid=1328408.1328436)
+* Ilya Sergey, Dimitrios Vytiniotis, Simon Peyton Jones; [Modular, higher-order cardinality analysis in theory and practice](http://dl.acm.org/citation.cfm?doid=2535838.2535861)
+
 
 ## What we expect from you – as you present a paper
 
