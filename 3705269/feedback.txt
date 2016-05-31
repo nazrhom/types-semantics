@@ -1,0 +1,93 @@
+Feedback for student #3705269
+
+Grader: #3370798
+
+Grade: 8.45
+
+Exercise 1: ----------------------------------------------------------------
+
+Matches the model exactly. 
+1 point.
+
+Exercise 2: ----------------------------------------------------------------
+
+madd: Matches the model functionally exactly.
+idMatrix: Matches the model exactly.
+transpose: Matches the model exactly.
+3/3: 1 point.
+
+Exercise 3: ----------------------------------------------------------------
+
+plan: Matches the model exactly.
+forget: Matches the model exactly.
+embed: Matches the model exactly.
+correct: Matches the model exactly.
+4/4: 1 point.
+
+Exercise 4: ----------------------------------------------------------------
+
+cmp: Matches the model exactly.
+difference: Matches the model exactly.
+2/2: 1 point.
+
+Exercise 5: ----------------------------------------------------------------
+
+plusZero, plusSucc, plusCommutes: match exactly.
+distributivity is missing.
+
+The model defines a plusAssoc, but the exercise itself does not.
+I am assuming it does not matter for grading.
+3/4: 0.75 points.
+
+Exercise 6: ----------------------------------------------------------------
+
+SublistRefl: matches.
+SublistTrans: the Drop/Drop case is missing, but the others are there. 
+I'll mark it as 3/4 correct.
+SublistAntiSym: missing.
+1.75 / 3 : 0.6 points.
+
+----------------------------------------------------------------------------
+
+It looks like 7/8 are swapped w.r.t the model. I'll follow the model's
+numbering: 7 is the constructive logic exercise, 8 is the LEQ exercise.
+
+Exercise 7: ----------------------------------------------------------------
+
+notNotP: matches.
+notNotExcludedMiddle: matches.
+step 1: no solution in model, but Agda accepts your solution, so I will too.
+step 2: same.
+step 3: missing.
+
+4/5: 0.8 points.
+
+Exercise 8: ----------------------------------------------------------------
+
+leqRefl: matches.
+leqTrans: for the case where the first argument is 'Base', induction on the
+          second argument was unnecessary. But it is correct, so full points.
+leqAntiSym: there's no solution in the model, but Agda accepts your solution, 
+            so I will too. 
+leq<=: matches.
+<=leq: matches.
+
+5/5: 1 point.
+
+Exercise 9: ----------------------------------------------------------------
+
+Your approach for 'exec' was the same as mine. Mine didn't prove either...
+Nevertheless, your 'exec' is total, so I'll give a point. (The same
+was done for mine.)
+
+Your "compile" function does not work correctly.
+I told Agda to evaluate the following:
+  (exec (compile (Add (Val 1) (Add (Val 2) (Val 3)))))
+It gave me:
+  \s -> Cons 1 s
+
+There is no correctness proof.
+
+1/3: 0.3 points.
+
+
