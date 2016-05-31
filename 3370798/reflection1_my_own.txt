@@ -1,0 +1,101 @@
+Reflection for #3370798, exercise 1.
+
+I'd grade myself: 8
+
+Exercise 1: ----------------------------------------------------------------
+
+It matches the model. That said, the implementation basically follows from
+the types, there aren't really any alternatives given the type signature.
+3/3: 1 point.
+
+Exercise 2: ----------------------------------------------------------------
+
+My definitions are... correct. As in, they work. However, they are not very
+elegant, especially the idMatrix definition. In retrospect, the model's 
+solutions are quite obvious. I was thinking about Haskell too much.
+
+3/3: 1 point.
+But I should dock myself a bit for lack of style.
+Let's say 0.9 points.
+
+Exercise 3: ----------------------------------------------------------------
+
+These are all the same as in the model.
+
+4/4: 1 point.
+
+Exercise 4: ----------------------------------------------------------------
+
+Almost matches, except I used the optional argument on LessThan, Equal
+and GreaterThan. I apparently didn't really need them. OTOH, my definition
+is more explicit.
+
+2/2: 1 point.
+
+Exercise 5: ----------------------------------------------------------------
+
+plusZero and plusSucc match exactly.
+For plusCommutes, I used < > notation, but otherwise it matches.
+
+I didn't figure out distributivity.
+
+3/4: 0.75 points.
+
+Exercise 6: ----------------------------------------------------------------
+
+SublistRefl matches.
+For SublistTrans I pattern-matched on the second variable instead of the
+first, but that doesn't matter in terms of logic.
+
+I didn't figure out SublistAntiSym.
+
+2/3: 0.6 points.
+
+----------------------------------------------------------------------------
+
+7 and 8 are swapped, by the looks of it. In the exercise set, they were both
+marked 7, I renamed the second one to 8, but the model has them the other
+way around. I'm going to use the numbering from the model.
+
+Exercise 7: ----------------------------------------------------------------
+
+I have notNotP, notExcludedMiddle and step1. C-c C-a does work wonders, but
+finding the answer is finding the answer.
+step2, step3 and Pierce's law I did not figure out (and neither did C-c
+C-a). 
+
+3/6: 0.5 points.
+
+Exercise 8: ----------------------------------------------------------------
+
+This matches the model completely. (leqAntiSym is missing from the model,
+but Agda accepts it.)
+
+1 point.
+
+Exercise 9: ----------------------------------------------------------------
+
+I had a "total" definition for exec, but not a correct one.
+I actually did get somewhat further by redefining the datatype, but not far 
+enough, so I submitted something for which I had at least a working exec 
+and compile.
+
+That said, my "compile" function matches the one given (i.e. I figured out
+that you should use a continuation), and my "exec" function is close.
+
+Asking Agda for the result of: exec (compile (...)) seems to give correct
+answers.
+
+There is no correctness proof, and that is because the equivalence can't
+go both ways. I defined stack underflow to be Nil, and "eval" can never
+get you stack underflow, therefore I'm reasonably certain that
+  forall y, Cons (eval x) s == y implies (exec (compile x) s) == y,
+however the reverse cannot hold.
+
+The other student who graded me gave me half a point for this question.
+I think that's too generous. I'm going to consider the "compile" function
+correct, but "exec" incorrect, and the proof is missing completely.
+
+1/3: 0.3 points.
+
+ 
