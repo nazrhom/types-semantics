@@ -1,0 +1,4 @@
+Unfortunately no implementation has been made (is this on purpose, or did
+handing in the exercise went wrong?), therefore no points can be given.
+
+Final mark: 1.0
