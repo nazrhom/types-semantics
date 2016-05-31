@@ -1,0 +1,28 @@
+matthew swart
+5597250
+
+Exercise 1 (1)
+Correct 
+Exercise 2 (2/3)
+idMatrix is a matrix filled with 1's not the idMartix 
+Exercise 3 (3/4)
+plan only stores Fz.
+trivial mapping but correct
+Exercise 4 (1)
+Correct 
+Exercise 5 (1)
+Correct.
+nice way of doing distributivity
+Exercise 6 (1)
+Correct 
+Exercise 7 (1)
+Correct 
+Exercise 8 (1)
+Correct 
+I think your solution to step1 is the intended way
+Exercise 9 (1/3)
+The data type of CMD could be improved so that it gives more information that can help for the correctness prove.
+There is no way compile produces a "ADD" so this can't be correct
+and the funciton correctness has holes in it
+
+total 8.75
