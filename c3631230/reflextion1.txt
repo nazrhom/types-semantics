@@ -1,0 +1,29 @@
+(It's slightly messy to have the exercises interspersed with the
+	chapter contents.)
+
+	* The assertion in plus_swap worked differently than expected, manually written in comment
+		therefore 3/4.
+	* mult_comm_sub is splitted in different lemma's, 1 not completed. Also I did use induction...
+		Therefore 2/4
+	* beq_nat_refl_informal missing, therefore 0/2 on that
+	* plus_swap' was affected the same way as plus_swap. No repeated deduction for that.
+	* the nonzeros_app was almost finished. As this is part of a long series, rounded to 3/3
+		(with a warning this sloppiness is inadequate)
+	* binary_commut missing: 0/3
+	* binary_inverse missing: 0/5
+	* list_design missing: 0/2
+	* count_member_nonzero missing: 0/3
+	* bag_count_sum missing: 0/3
+	* rev_injective missing: 0/4
+
+
+The grading was not specified clearly.
+Induction chapter:
+	* 11 (required) exercises
+	* 28 stars
+List chapter:
+	* 6 (required) exercises
+	* 18 stars
+Which totals at 46 stars, 25 were earned. Grade:
+	* No free points assumed: 5.4
+	* Usual 1 free point: 5.9

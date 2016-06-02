@@ -1,0 +1,15 @@
+Feedback from: 5597250
+Feedback to: 5666163
+1: 1.00	
+2: 1.00	
+3: 1.00	
+4: 1.00	
+5: 0.75	
+6: 0.33	
+7: 0.83	
+8: 0.50	
+9: 0.67	
+
+Grade: 7.08 + 1 = 8.08
+
+ Most of the exercises are correct. There were some mistakes, but overall it looks good! I would like to give you a tip for the next time if you are trying to solve something like this: <=leq (Succ n) Zero x = {!!}. If you look at the goal type and context (Control c + control ,) of this case you can see that x(False == True) is absurd. So, if you pattern matched(Control c + Control c) on x, it would return an absurd pattern. The last case of difference is not correct, but I did not punish you for it, because it was not a really big mistake and it did not really matter in the grade. It should have been Succ(Succ k).

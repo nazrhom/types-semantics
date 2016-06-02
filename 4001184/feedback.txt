@@ -1,0 +1,43 @@
+Exercise 1:
+Perfect
+1 pt
+
+Exercise 2:
+Used explicit recursion in madd, but also correct. Model solution may be more elegant since it doesn't use explicit recursion or case splits. 
+Transpose is correct, but very explicit and uses helper function (tail). Model solution more elegant.
+1 pt
+
+Exercise 3:
+Plan function technically correct, but it uses two unneeded helper functions. Model solution much more elegant.
+1 pt
+
+Exercise 4:
+Difference should return "Succ k" instead of "k" in both nontrivial cases.
+0.5 pt (due to difference) 
+
+Exercise 5:
+Distributivity proof messy and doesn't load properly. After fixing notation (replacing the _ with ".(m + k)") it loads and appears to be correct. Model solution still a lot less messy though. 
+0.75 pt (due to not loading)
+
+Exercise 6:
+The Drop Drop case of SubListTrans uses unneeded double recursion and a call to SubListRefl that I don't understand, but it appears to be correct. The model solution is a lot less messy, and simply the line "Drop (SubListTrans (Drop sub1) sub2)" would have been correct and elegant as well.
+Reduction ad adsurdum redefined even though it is in the Prelude (called "magic"). 
+Impossible found in a less general way than the model solution does, but this wasn't required for the exercise. 
+SubListAntiSym uses more helper functions than it does in the model solution, but it is still correct. This solution might be more elegant than model solution since it doesn't need to case match on sub2. 
+1 pt
+
+Exercise 7:
+Perfect
+1 pt
+
+Exercise 8:
+Seems correct, but the model solution does not provide a solution to this exercise, so I cannot be sure. 
+1 pt
+
+Exercise 9:
+Change to Cmd and Stack types done correctly.
+Compile appears to add one ADD too many, compared to the model solution.
+Correctness proof not done. 
+0.25 pt (due to compile and lack of correctness proof)
+
+8.5 total

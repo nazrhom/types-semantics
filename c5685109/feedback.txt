@@ -1,0 +1,25 @@
+Induction exercises:
+  There are 28 stars in total when excluding the last two exercises.
+  (Only 19 when not counting optional exercises, as that was left unspecified in the initial e-mail)
+
+  binary_inverse:
+      Part (a) was completed, but not part (b) and (c).
+      It didn't work out because the implementation of normalize is wrong.
+      It will always strip off the outer Double constructor, regardless of
+      the nested value. I.e. the number 2 represented by "Double (DPlusOne Z)"
+      becomes just "DPlusOne Z".
+
+      1.5 / 5 stars
+
+  All other exercises have been solved in a reasonably concise way.
+
+List exercises:
+  There are 36 stars in total when excluding the dictionary exercises (unclear whether they still belong to Part 2).
+  (Only 28 when excluding "optional" exercises).
+
+  Every exercise has been done reasonably well.
+
+
+All but 3.5 stars from the relevant parts have been achieved (including "optional" exercises).
+
+Grade: 9.4
