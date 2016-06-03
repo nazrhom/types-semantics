@@ -1,0 +1,1 @@
+The slides and code corresponding to today's lecture can be found in the [schedule](schedule.html). Also, don't forget to submit the first exercise set before midnight tomorrow via [submit](http://www.cs.uu.nl/docs/submit)!
