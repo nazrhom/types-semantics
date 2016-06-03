@@ -39,7 +39,7 @@ or alternatively, [From mathematics to Abstract Machine: A formal derivation of 
 * Peter Landin; [The next 700 programming languages](http://www.inf.ed.ac.uk/teaching/courses/epl/Landin66.pdf) (Giovanni Garufi & Sije Harkema)
 * Dave van Horn and Matthew Might; [Abstract abstract machines](http://dl.acm.org/citation.cfm?id=1863553)
 * Jeroen Weijers, Jurriaan Hage, and Stefan Holdermans; [Security Type Error Diagnosis for Higher-Order Polymorphic Languages](http://www.sciencedirect.com/science/article/pii/S0167642314001518)
-* Jurriaan Hage and Stefan Holdermans; [Heap recycling for lazy languages](http://dl.acm.org/citation.cfm?doid=1328408.1328436)
+* Jurriaan Hage and Stefan Holdermans; [Heap recycling for lazy languages](http://dl.acm.org/citation.cfm?doid=1328408.1328436) (Robin Kuipers. If someone else wants to do this paper, we can team up.)
 * Ilya Sergey, Dimitrios Vytiniotis, Simon Peyton Jones; [Modular, higher-order cardinality analysis in theory and practice](http://dl.acm.org/citation.cfm?doid=2535838.2535861) Ferdinand van Walree and Matthew Swart
 
 
