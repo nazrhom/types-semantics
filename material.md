@@ -31,7 +31,7 @@ If you do not own the book, you can replace Chapter 5 with Flemming Nielson and 
 ## Research Papers
 
 * John Launchbury; [A natural semantics for Lazy Evaluation](http://www.cse.chalmers.se/edu/year/2010/course/DAT140_Types/Launchbury.pdf)
-* Jean-Louis Krivine, [Call-by-name lambda-calculus machine](http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf)
+* Jean-Louis Krivine, [Call-by-name lambda-calculus machine](http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf) (Fabian Thorand and Carlos Tomé)
 or alternatively, [From mathematics to Abstract Machine: A formal derivation of an executable Krivine machine](http://eptcs.web.cse.unsw.edu.au/paper.cgi?MSFP2012.10)
 * Nils Anders Danielsson; [Operational semantics using the partiality monad](http://www.cse.chalmers.se/~nad/publications/danielsson-semantics-partiality-monad.pdf)
 * Phil Wadler; [Theorems for free!](http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf), Renate Eilers and Yfke Dulek
