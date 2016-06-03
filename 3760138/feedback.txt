@@ -1,0 +1,36 @@
+Unfortunately no implementation has been made (is this on purpose, or did
+handing in the exercise went wrong?), therefore no points can be given.
+
+Final mark: 1.0
+
+
+-------------------------------------
+
+Exercise 2
+
+(small change needed to be made  for parse error in big step data definition)
+Not sure why the pairs were not introduced. As the other parts are completed
+really well, it seems you can do the pairs probably.
+
+* determinism & uniqueness of normal forms proofs
+	 This looks really clear. 1
+
+* Definition of big step semantics
+	Pretty much by the book, very well. 1
+
+* Big-to-small and small-to-big lemmas
+	You could do with more implicit parameters as you can see they're all fixed,
+	but it might help in completing the proofs so that's ok. Looks fine for the
+	rest. 1 + 1
+
+* Soundness and completeness of big-step semantics
+	Same remarks as above, implicit params could be used in soudness proof. But no
+	problem. For the rest it's great. 1 + 1
+
+* Small step semantics, big step semantics and denotational semantics of pairs
+	This was not imlemented. 0
+
+* Updating existing proofs to handle pairs
+	This was not imlemented. 0
+
+Final mark: 7.0

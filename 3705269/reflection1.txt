@@ -1,0 +1,15 @@
+Self reflection of 3705269
+
+   1pt   - base point
+1: 1pt   - correct
+2: 1pt   - correct
+3: 1pt   - correct
+4: 1pt   - correct
+5: .75pt - distributivity is incorrect
+6: .5pt  - SubListTrans not fully correct, SubListAntiSym incorrect
+7: 1pt   - correct
+8: 1pt   - correct
+9: .25pt - only exec is partly implemented, didn't know Cmd datatype was
+           allowed to be altered
+
+Final mark: 8.5
