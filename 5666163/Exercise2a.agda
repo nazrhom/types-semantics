@@ -239,6 +239,8 @@ deterministic (E-IsZero x) (E-IsZero y)         = cong iszero (deterministic x y
 deterministic (E-IsZeroSucc x) (E-IsZero y)     = {!!} 
 deterministic (E-IsZero x) (E-IsZeroSucc y)     = {!!}
 
+-- (1/2) * 13 / 18 points
+
 -- A sequence of steps that can be applied in succession.
 data Steps {ty : Type} : Term ty → Term ty → Set where
   Nil  : ∀ {t} → Steps t t
@@ -278,6 +280,8 @@ uniqueness-of-normal-forms (Cons x xs)  Nil        norm₁ norm₂ = contradicti
 uniqueness-of-normal-forms (Cons x xs) (Cons y ys) norm₁ norm₂ with deterministic x y
 uniqueness-of-normal-forms (Cons x xs) (Cons y ys) norm₁ norm₂ | refl = uniqueness-of-normal-forms xs ys norm₁ norm₂
 
+-- (1/2) * 4 / 4 points
+
 ------------------------------------------------------------------------
 -- Big-step semantics.
 
@@ -292,6 +296,8 @@ data _⇓_ : {ty : Type} → Term ty → Value ty → Set where
   B-IsZeroZero : {n : Term NAT} → n ⇓ (vnat Zero) → (iszero n) ⇓ vtrue
   B-IsZeroSucc : {n : Nat} {m : Term NAT}  → m ⇓ vnat (Succ n) → iszero m ⇓ vfalse
 
+-- 1 * 6 / 8 points. IsZeroZero and IsZeroSucc should be IsZeroFalse and IsZeroTrue
+
 -- Show how to convert from big step to small step semantics
 big-to-small : ∀ {ty} {t : Term ty} {v : Value ty} → t ⇓ v → Steps t (val2term v)
 big-to-small B-True               = Nil
@@ -303,6 +309,8 @@ big-to-small (B-IsZeroSucc {n} a) = E-IsZero-Steps (big-to-small a) ++ [ E-IsZer
 big-to-small (B-If-True  x y)     = E-If-Steps (big-to-small x) ++ ([ E-If-True ]  ++ big-to-small y)
 big-to-small (B-If-False x y)     = E-If-Steps (big-to-small x) ++ ([ E-If-False ] ++ big-to-small y)
 
+-- 1 * 7 / 8 points. Counting the isZeroZero and IsZeroSucc. 6 / 8 otherwise
+
 -- Conversion from small- to big-step representations.
 value-to-value : ∀ {ty} {t : Term ty} → (p : IsValue t) → t ⇓ toVal t p
 value-to-value V-True     = B-True
@@ -310,12 +318,16 @@ value-to-value V-False    = B-False
 value-to-value V-Zero     = B-Zero
 value-to-value (V-Succ p) = {!!}
 
+-- ? * 3 / 4 points. Not specified in email
+
 -- And conversion in the other direction
 small-to-big : {ty : Type} → {t t' : Term ty} → (p : IsValue t') → Steps t t' → t ⇓ toVal t' p
 small-to-big p steps = {!!}
   where
   prepend-step : {ty : Type} → (t t' : Term ty) (v : Value ty) → Step t t' → t' ⇓ v → t ⇓ v
   prepend-step = {!!}
+
+-- 1 * 0 / 17 points
 
 --------------------------------------------------------------------------------
 -- Relating denotational semantics and big-step semantics
@@ -330,6 +342,8 @@ small-to-big p steps = {!!}
 ⇓-complete (iszero t) = {!!}
 ⇓-complete (if t then t₁ else t₂) = {!!}
 
+-- 1 * 3 / 10 points
+
 -- Prove soundness of the big-step semantics: when a term can be
 -- big-step evaluated to a value, this value should be the evaluation
 -- of that term.
@@ -342,3 +356,20 @@ small-to-big p steps = {!!}
 ⇓-sound (B-If-False x y) = {!!}
 ⇓-sound (B-IsZeroZero x) = {!!}
 ⇓-sound (B-IsZeroSucc x) = {!!}
+
+-- 1 * 3 / 8 points:
+
+-- * Determinism & uniqueness of normal forms proofs
+--   1.2222 points
+-- * Definition of big step semantics
+--   0.75 points
+-- * Big-to-small and small-to-big lemmas
+--   0.875 points
+-- * Soundness and completeness of big-step semantics
+--   0.675 points
+-- * Small step semantics, big step semantics and denotational semantics of pairs
+--   0 points
+-- * Updating existing proofs to handle pairs
+--   0 points
+--
+-- Total: 3.52 points (39.1 % of max)

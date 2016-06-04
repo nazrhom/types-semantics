@@ -1,0 +1,9 @@
+At this point i really fall behind because i lack understanding of what is
+actually going on. My solving strategy is 1) Deduce which arguments can be
+implicit. 2) pattern match on ALL the remaining arguments. 3) Make agda fill in
+contradictions and refl. Trial and error the rest...
+
+Even with explanation from Joao i'm unable to solve most of the exercises :(
+
+~ Martijn
+

@@ -350,6 +350,7 @@ deterministic (E-Snd step1) (E-TupleSnd vt) = contradiction (values-are-normal-f
 deterministic (E-Snd step1) (E-Snd step2) with deterministic step1 step2
 deterministic (E-Snd step1) (E-Snd step2) | refl = refl
 
+-- (1/2) * 18 / 18 points
 
 -- A sequence of steps that can be applied in succession.
 data Steps {ty : Type} : Term ty → Term ty → Set where
@@ -379,6 +380,8 @@ uniqueness-of-normal-forms t₂ t₁ .t₂ (Cons x step₁) Nil nf1 nf2 = contra
 uniqueness-of-normal-forms t t₁ t₂ (Cons x step₁) (Cons y step₂) nft1 nft2 with deterministic x y
 uniqueness-of-normal-forms t t₁ t₂ (Cons x step₁) (Cons y step₂) nft1 nft2 | refl = uniqueness-of-normal-forms _ t₁ t₂ step₁ step₂ nft1 nft2
 
+-- (1/2) * 4 / 4 points
+
 -- ------------------------------------------------------------------------
 -- -- Big-step semantics.
 
@@ -399,6 +402,8 @@ data _⇓_ : {ty : Type} -> Term ty → Value ty → Set where
   EvalFst   : ∀ {σ τ} {t : Term (σ × τ)} {l : Value σ} {r : Value τ} -> t ⇓ ⟪ l , r ⟫ -> fst t ⇓ l
   EvalSnd   : ∀ {σ τ} {t : Term (σ × τ)} {l : Value σ} {r : Value τ} -> t ⇓ ⟪ l , r ⟫ -> snd t ⇓ r
   EvalTuple : ∀ {σ τ} {t : Term σ} {s : Term τ} {v : Value σ} {w : Value τ } -> t ⇓ v -> s ⇓ w -> ⟨ t , s ⟩ ⇓ ⟪ v , w ⟫
+
+-- 1 * 8 / 8 points
 
 -- An extension of the E-If rule, for multiple steps.
 E-If-Steps : ∀ {σ} {t₁ t₁′ : Term BOOL}{ t₂ t₃ : Term σ} ->
@@ -464,6 +469,8 @@ big-to-small (EvalFst p) = (E-FstTuple-Steps (big-to-small p)) ++ [ E-TupleFst (
 big-to-small (EvalSnd p) = (E-SndTuple-Steps ((big-to-small p))) ++ [ E-TupleSnd (V-Tuple (isValueComplete _) (isValueComplete _))]
 big-to-small (EvalTuple p r) = (E-TupleFst-Steps (big-to-small p)) ++ E-TupleSnd-Steps (isValueComplete _) (big-to-small r)
 
+-- 1 * 7 / 8 points
+
 -- Conversion from small- to big-step representations.
 value-to-value : forall {ty} (t : Term ty) -> (p : IsValue t) -> t ⇓ toVal t p
 value-to-value .true V-True = EvalTrue
@@ -472,6 +479,8 @@ value-to-value .zero V-Zero = EvalZero
 value-to-value _ (V-Succ p) with toVal _ p  | value-to-value _ p
 value-to-value _ (V-Succ p) | vnat n | vp = EvalSucc  vp
 value-to-value _ (V-Tuple t s) = EvalTuple (value-to-value _ t) (value-to-value _ s)
+
+-- ? * 3 / 4 points. Not specified in email
 
 value-lemma : ∀ {σ} (v : Value σ) -> ⌜ v ⌝ ⇓ v
 value-lemma vtrue = EvalTrue
@@ -511,6 +520,8 @@ small-to-big t t' p (Cons x steps) = prepend-step t _ (toVal t' p) x (small-to-b
     prepend-step _ _ v (E-Fst step) (EvalFst d) = EvalFst (prepend-step _ _ ⟪ v , _ ⟫ step d)
     prepend-step _ _ v (E-Snd step) (EvalSnd d) = EvalSnd (prepend-step _ _ ⟪ _ , v ⟫ step d)
 
+-- 1 * 17 / 17 points
+
 -- --------------------------------------------------------------------------------
 -- -- Relating denotational semantics and big-step semantics
 
@@ -533,6 +544,8 @@ small-to-big t t' p (Cons x steps) = prepend-step t _ (toVal t' p) x (small-to-b
 ⇓-complete (fst t) | ⟪ l , r ⟫ | ct = EvalFst ct
 ⇓-complete (snd t) with ⟦ t ⟧ | ⇓-complete t
 ⇓-complete (snd t) | ⟪ l , r ⟫ | ct = EvalSnd ct
+
+-- 1 * 3 / 10 points
 
 -- Prove soundness of the big-step semantics: when a term can be
 -- big-step evaluated to a value, this value should be the evaluation
@@ -558,6 +571,7 @@ small-to-big t t' p (Cons x steps) = prepend-step t _ (toVal t' p) x (small-to-b
 ⇓-sound _ _ (EvalTuple {_} {_} {t} {s} d r) with  ⟦ t ⟧ | ⇓-sound _ _ d | ⟦ s ⟧ | ⇓-sound _ _ r
 ⇓-sound _ .(⟪ v , w ⟫) (EvalTuple d r) | v | refl | w | refl = refl
 
+-- 1 * 3 / 8 points
 
 -- Termination
 
@@ -592,3 +606,18 @@ termination (fst t) with termination t
 termination (fst t) | terminates ⟪ v , v₁ ⟫ x = terminates v ((E-FstTuple-Steps x) ++ [ E-TupleFst (V-Tuple (isValueComplete v) (isValueComplete v₁)) ])
 termination (snd t) with termination t
 termination (snd t) | terminates ⟪ v , v₁ ⟫ x = terminates v₁ ((E-SndTuple-Steps x) ++ [ E-TupleSnd (V-Tuple (isValueComplete v) (isValueComplete v₁)) ])
+
+-- * Determinism & uniqueness of normal forms proofs
+--   1 point
+-- * Definition of big step semantics
+--   1 point
+-- * Big-to-small and small-to-big lemmas
+--   2 points
+-- * Soundness and completeness of big-step semantics
+--   2 points
+-- * Small step semantics, big step semantics and denotational semantics of pairs
+--   1.5 points
+-- * Updating existing proofs to handle pairs
+--   1.5 points
+--
+-- Total: 9.00 points (100 % of max)
