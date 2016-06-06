@@ -1,0 +1,8 @@
+There are no goals left, and the file typechecks. Additional exercises have been
+carried out and therefore all the 9 points are awarded.
+
+It looks like a big mess though, but i guess that's just how AGDA is. I try to
+keep similar arguments and equals signs aligned.
+
+I cannot say anything else. Good job.
+~ Martijn
