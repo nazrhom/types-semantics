@@ -1,1 +1,0 @@
-I've uploaded the [code from today's lecture](code/BoolNatDemo.html). I'll try to upload the next exercise set shortly. Watch your mailbox for instructions regarding the marking of the previous exercise. 
