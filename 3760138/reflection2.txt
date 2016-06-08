@@ -1,0 +1,28 @@
+Determinism & uniqueness of normal forms proofs (1):
+Deterministic is identical to model solution, except for way of proving contradictions, but both ways are correct. 
+Uonf in the double-cons case could have been done faster, but still correct. (The second with line is not needed.)
+Points: 1
+
+Definition of big step semantics (1):
+Mostly identical to model solution, except the model solution uses the (previously undefined) function vsucc, while this solution inlined the definition of that function. 
+Points: 1
+
+Big-to-small and small-to-big lemmas (1 + 1):
+Basically identical to model solution.
+Value-to-value matches on term instead of proof; proof would have elimintated unused cases.
+Sbt uses a big, unneeded helper function (bigstep-values) but it is still correct. 
+Points: 2
+
+Soundness and completeness of big-step semantics (1 + 1):
+Both proof correct, but could be shortened by better use of implicit parameters.
+Points: 2
+
+Small step semantics, big step semantics and denotational semantics of pairs (1.5):
+Not implemented.
+Points: 0
+
+Updating existing proofs to handle pairs (1.5):
+Not implemented.
+Points: 0
+
+Total: 7

@@ -41,3 +41,37 @@ Correctness proof not done.
 0.25 pt (due to compile and lack of correctness proof)
 
 8.5 total
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Assignment 2:
+
+Determinism & uniqueness of normal forms proofs (1):
+Deterministic primarily pattern matched on steps instead of terms (as was done in model solution), but since possible steps depend on the value of terms, both are correct.
+Contradictions there are handled differently from model solution, but also correct.
+The IsZero IsZero case is handled using cong with a recursive call, instead of a regular recursive call (using with) which would have sufficed. Still correct though.
+Uonf done correctly, although the contradictions are different (more extensive) again. Simply handing a normal form the proof that what it's about reduces is enough. 
+Points: 1
+
+Definition of big step semantics (1):
+Mostly identical to model solution, except the model solution uses the (previously undefined) function vsucc, while this solution inlined the definition of that function. 
+Points: 1
+
+Big-to-small and small-to-big lemmas (1 + 1):
+Bts is correct, but inconsistent. The E-If-Steps functions is a stand-alone function, while the similar E-Succ-Steps is inline. This way, E-iszero-Steps cannot be used in the second case of iszero, which is now handles by a rather messy local function. This also uses isValueComplete, which is a proof function instead of a conversion function (using it is OK, but not 'nice'). 
+Value-to-value function makes type parameter explicit, which seems unneeded. Also uses a local helper function which could have been replaced with a with-clause (which I think is more elegant). Still correct.
+Stb not as elegant as it is in the model solution, it seems correct.
+Points: 2
+
+Soundness and completeness of big-step semantics (1 + 1):
+Not implemented.
+Points: 0
+
+Small step semantics, big step semantics and denotational semantics of pairs (1.5):
+Not implemented.
+Points: 0
+
+Updating existing proofs to handle pairs (1.5):
+Not implemented.
+Points: 0
+
+Total: 5
