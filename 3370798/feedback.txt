@@ -1,0 +1,71 @@
+# Determinism and uniqueness of normal forms
+
+0.7/1.
+
+The determinism proof contains several holes. One of them could be filled in
+simply with `refl`.
+
+# Definition of big-step semantics
+
+1/1, looks ok.
+
+# Big-to-small and small-to-big lemmas
+
+Big-to-small (0.1/1): missing except for the trivial cases. The way to do it is
+to recursively serialize the prerequisite steps, make the appropriate small
+step, and then concatenate them in the right order. For some steps this involves
+mapping over one of the resurively computed sequence of steps.
+
+Small-to-big (0.5/1): the definition itself is missing, but given `prepend-step`
+that is not the hard part. Not all cases of `prepend-step` are implemented.
+There is only one big step that can yield the desired result, so it is a matter
+of making the right recursive calls.
+
+# Soundness and completeness of big-step semantics
+
+Completeness (0.9/1): there are two holes for the if-then-elses. You did all the
+hard work already though, to fill in the holes just use `BS-IfTrue` and
+`BS-IfFalse` with `rs` and the appropriate recursive call. Other than that this
+looks fine.
+
+Soundness (0.8/1): proof for `zero` missing. It could be proved by pattern
+matching on the number, and then using `refl` in one branch and an absurd
+pattern in the other.
+
+# Small-step semantics, big-step semantics, and denotational semantics of pairs
+
+0.7/1.5.
+
+The reason that you failed to prove determinism for the tuple steps, is that
+with your small-step definitions for tuples, the semantics are *not*
+deterministic. If I have a term `(a, b)` and steps `a -> a'`, `b -> b'`, then
+both `E-Tuple-Fst` and `E-Tuple-Snd` are valid steps. The way to resolve this,
+is to require that the left side is a value for `E-Tuple-Snd`.
+
+Furthermore, you are missing two small-step semantics. For instance, the term
+`snd (if true then (0, 0) else (1, 1))` could not make progress with your
+semantics, you need a step to "evaluate under the fst/snd", just like you need
+one to evaluate under the if.
+
+Once you add the extra steps, you again need to be careful to preserve
+determinism: for `fst (a b)` you can opt to only fully evaluate `a`, or to
+evaluate until the entire tuple is a value and then take `a`. The same holds for
+`snd`.
+
+Big steps look ok. I like how you used × for product types.
+
+# Update existing proofs to handle pairs
+
+0.5/1.5.
+
+Determinism: failed to prove due to wrong definition.
+Big-to-small, small-to-big: not implemented.
+Completeness: ok.
+Soundness: by using a with-clause with a recursive call and one with the
+evaluation of `t` (as you did in the other cases), you can prove that tuples are
+equal. Then use a small lemma for `(a, b) == (c, b) -> a == c` (and similar for
+the second element).
+
+# Total
+
+(1 + 5.2) / (1 + 9)
