@@ -1,0 +1,22 @@
+Exercise   | Grade | Points | Remarks
+-----------------------------------
+1          | 2/2   | 1.0    | I like how you kept the terms hidden in the proof and
+                              just pattern match on the step, you get a very clean proof.
+-----------------------------------
+2          | 1/1   | 1.0    | In some of the definitions you name some of the argum
+                              ents that you don't use latter and it makes code a
+                              little bit dirty.
+-----------------------------------
+3          | 2/2   | 2.0    | Very well done abstracting with the map function, so
+                              you avoid a lot of code repetition.
+-----------------------------------
+4          | 2/2   | 2.0    | In both proofs you can use the "with" constructions
+                              multiple times in the same line so Agda learns more
+                              information about what you need and you avoid some
+                              polution in the proof.
+-----------------------------------
+5          | 3/3   | 1.5    | Good.
+-----------------------------------
+6          | 3/3   | 1.5    | Good.
+----------------------------------
+Total (+1) | --    | 10.0   |
