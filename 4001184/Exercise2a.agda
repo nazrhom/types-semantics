@@ -158,7 +158,7 @@ valuesDoNotStep : forall {ty} -> (t t' : Term ty) -> Step t t' -> IsValue t -> E
 valuesDoNotStep .true t' () V-True
 valuesDoNotStep .false t' () V-False
 valuesDoNotStep .zero t' () V-Zero
-valuesDoNotStep _ _ (E-Succ step) (V-Succ v) = valuesDoNotStep _ _ step v
+valuesDoNotStep ._ ._ (E-Succ step) (V-Succ v) = valuesDoNotStep _ _ step v
 
 -- A term is reducible when some evaluation step can be applied to it.
 data Red {ty : Type} (t : Term ty) : Set where
@@ -172,8 +172,8 @@ toVal : forall {ty} -> (t : Term ty) -> IsValue t -> Value ty
 toVal .true V-True = vtrue
 toVal .false V-False = vfalse
 toVal .zero V-Zero = vnat Zero
-toVal _ (V-Succ v) with toVal _ v
-toVal _ (V-Succ v) | vnat x₁ = vnat (Succ x₁)
+toVal ._ (V-Succ v) with toVal _ v
+toVal ._ (V-Succ v) | vnat x₁ = vnat (Succ x₁)
 
 mutual
   if-reduces : ∀ {ty} (t₁ : Term BOOL) (t₂ : Term ty) (t₃ : Term ty) → Red (if t₁ then t₂ else t₃)
@@ -224,28 +224,28 @@ mutual
 
 -- Prove that the small step semantics is deterministic
 deterministic : ∀ {ty} (t t₁ t₂ : Term ty) → Step t t₁ → Step t t₂ → t₁ == t₂
-deterministic _ t3 .t3 E-If-True E-If-True = refl
-deterministic _ t2 _ E-If-True (E-If-If ())
-deterministic _ t3 .t3 E-If-False E-If-False = refl
-deterministic _ t3 _ E-If-False (E-If-If ())
-deterministic _ _ t2 (E-If-If ()) E-If-True
-deterministic _ _ t4 (E-If-If ()) E-If-False
-deterministic _ _ _ (E-If-If s1) (E-If-If s2) with deterministic _ _ _ s1 s2
-deterministic _ _ _ (E-If-If s1) (E-If-If s2) | refl = refl
-deterministic _ _ _ (E-Succ s1) (E-Succ s2) with deterministic _ _ _ s1 s2
-deterministic _ _ _ (E-Succ s1) (E-Succ s2) | refl = refl
+deterministic ._ t3 .t3 E-If-True E-If-True = refl
+deterministic ._ t2 ._ E-If-True (E-If-If ())
+deterministic ._ t3 .t3 E-If-False E-If-False = refl
+deterministic ._ t3 ._ E-If-False (E-If-If ())
+deterministic ._ ._ t2 (E-If-If ()) E-If-True
+deterministic ._ ._ t4 (E-If-If ()) E-If-False
+deterministic ._ ._ ._ (E-If-If s1) (E-If-If s2) with deterministic _ _ _ s1 s2
+deterministic ._ ._ ._ (E-If-If s1) (E-If-If s2) | refl = refl
+deterministic ._ ._ ._ (E-Succ s1) (E-Succ s2) with deterministic _ _ _ s1 s2
+deterministic ._ ._ ._ (E-Succ s1) (E-Succ s2) | refl = refl
 deterministic .(iszero zero) .true .true E-IsZeroZero E-IsZeroZero = refl
-deterministic .(iszero zero) .true _ E-IsZeroZero (E-IsZero ())
-deterministic _ .false true (E-IsZeroSucc x) ()
-deterministic _ .false false (E-IsZeroSucc x) s2 = refl
-deterministic _ .false (if t2 then t3 else t4) (E-IsZeroSucc x) ()
-deterministic _ .false (iszero (if t2 then t3 else t4)) (E-IsZeroSucc x) (E-IsZero ())
-deterministic _ .false (iszero zero) (E-IsZeroSucc x) (E-IsZero ())
+deterministic .(iszero zero) .true ._ E-IsZeroZero (E-IsZero ())
+deterministic ._ .false true (E-IsZeroSucc x) ()
+deterministic ._ .false false (E-IsZeroSucc x) s2 = refl
+deterministic ._ .false (if t2 then t3 else t4) (E-IsZeroSucc x) ()
+deterministic ._ .false (iszero (if t2 then t3 else t4)) (E-IsZeroSucc x) (E-IsZero ())
+deterministic ._ .false (iszero zero) (E-IsZeroSucc x) (E-IsZero ())
 deterministic .(iszero (succ zero)) .false (iszero (succ t2)) (E-IsZeroSucc V-Zero) (E-IsZero (E-Succ ()))
-deterministic _ .false (iszero (succ _)) (E-IsZeroSucc (V-Succ x₁)) (E-IsZero (E-Succ (E-Succ s2))) = contradiction (valuesDoNotStep _ _ s2 x₁)
-deterministic .(iszero zero) _ .true (E-IsZero ()) E-IsZeroZero
-deterministic _ _ .false (E-IsZero s1) (E-IsZeroSucc x) = contradiction (valuesDoNotStep _ _ s1 (V-Succ x))
-deterministic _ _ _ (E-IsZero s1) (E-IsZero s2) = cong iszero (deterministic _ _ _ s1 s2)
+deterministic ._ .false (iszero (succ ._)) (E-IsZeroSucc (V-Succ x₁)) (E-IsZero (E-Succ (E-Succ s2))) = contradiction (valuesDoNotStep _ _ s2 x₁)
+deterministic .(iszero zero) ._ .true (E-IsZero ()) E-IsZeroZero
+deterministic ._ ._ .false (E-IsZero s1) (E-IsZeroSucc x) = contradiction (valuesDoNotStep _ _ s1 (V-Succ x))
+deterministic ._ ._ ._ (E-IsZero s1) (E-IsZero s2) = cong iszero (deterministic _ _ _ s1 s2)
 -- A sequence of steps that can be applied in succession.
 data Steps {ty : Type} : Term ty → Term ty → Set where
   Nil : forall {t} -> Steps t t
@@ -344,21 +344,21 @@ small-to-big t2 .t2 p Nil = value-to-value _ t2 p
 small-to-big t1 t2 p (Cons x s) = prepend-step t1 _ (toVal t2 p) x (small-to-big _ _ p s)
   where
   prepend-step : {ty : Type} -> (t t' : Term ty) (v : Value ty) → Step t t' -> t' ⇓ v → t ⇓ v
-  prepend-step _ t2 v₁ E-If-True bs = evalIfTrue evalTrue bs
-  prepend-step _ t2 v₁ E-If-False bs = evalIfFalse evalFalse bs
-  prepend-step _ _ v₁ (E-If-If s) (evalIfTrue bs bs₁) = evalIfTrue (prepend-step _ _ vtrue s bs) bs₁
-  prepend-step _ _ v₁ (E-If-If s) (evalIfFalse bs bs₁) = evalIfFalse (prepend-step _ _ vfalse s bs) bs₁
-  prepend-step _ _ _ (E-Succ s) (evalSucc bs) = evalSucc (prepend-step _ _ (vnat _) s bs)
+  prepend-step ._ t2 v₁ E-If-True bs = evalIfTrue evalTrue bs
+  prepend-step ._ t2 v₁ E-If-False bs = evalIfFalse evalFalse bs
+  prepend-step ._ ._ v₁ (E-If-If s) (evalIfTrue bs bs₁) = evalIfTrue (prepend-step _ _ vtrue s bs) bs₁
+  prepend-step ._ ._ v₁ (E-If-If s) (evalIfFalse bs bs₁) = evalIfFalse (prepend-step _ _ vfalse s bs) bs₁
+  prepend-step ._ ._ ._ (E-Succ s) (evalSucc bs) = evalSucc (prepend-step _ _ (vnat _) s bs)
   prepend-step .(iszero zero) .true .vtrue E-IsZeroZero evalTrue = evalIsZeroTrue evalZero
   prepend-step .(iszero (succ zero)) .false .vfalse (E-IsZeroSucc V-Zero) evalFalse = evalIsZeroFalse (evalSucc evalZero)
-  prepend-step _ .false .vfalse (E-IsZeroSucc (V-Succ x₁)) evalFalse = evalIsZeroFalse2 ((prepend-step (iszero (succ _)) false vfalse (E-IsZeroSucc x₁)
+  prepend-step ._ .false .vfalse (E-IsZeroSucc (V-Succ x₁)) evalFalse = evalIsZeroFalse2 ((prepend-step (iszero (succ _)) false vfalse (E-IsZeroSucc x₁)
                                                                         evalFalse))
                where
                evalIsZeroFalse2 : forall {n : Term NAT} {v : Value BOOL} -> (iszero n) ⇓ v -> (iszero (succ n)) ⇓ vfalse   
                evalIsZeroFalse2 (evalIsZeroTrue bs) = evalIsZeroFalse (evalSucc bs)
                evalIsZeroFalse2 (evalIsZeroFalse bs) = evalIsZeroFalse (evalSucc bs)
-  prepend-step _ _ .vtrue (E-IsZero s) (evalIsZeroTrue bs) = evalIsZeroTrue (prepend-step _ _ (vnat Zero) s bs)
-  prepend-step _ _ .vfalse (E-IsZero s) (evalIsZeroFalse bs) = evalIsZeroFalse (prepend-step _ _ (vnat (Succ _)) s bs)
+  prepend-step ._ ._ .vtrue (E-IsZero s) (evalIsZeroTrue bs) = evalIsZeroTrue (prepend-step _ _ (vnat Zero) s bs)
+  prepend-step ._ ._ .vfalse (E-IsZero s) (evalIsZeroFalse bs) = evalIsZeroFalse (prepend-step _ _ (vnat (Succ _)) s bs)
 
 ------------------------------------------------------------------------------
 -- Relating denotational semantics and big-step semantics
