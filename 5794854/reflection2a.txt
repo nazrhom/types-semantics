@@ -1,0 +1,27 @@
+Exercise   | Grade | Points | Remarks
+-----------------------------------
+1          | 2/2   | 1.0    |
+-----------------------------------
+2          | 1/1   | 1.0    |
+-----------------------------------
+3          | 2/2   | 2.0    |
+-----------------------------------
+4          | 2/2   | 2.0    |
+-----------------------------------
+5          | 3/3   | 1.5    | 
+-----------------------------------
+6          | 3/3   | 1.5    |
+----------------------------------
+Total (+1) | --    | 10.0   |
+
+I think I did a good work with the exercises. Although in the big-to-small proof
+I spell all sort of different functions to deal with mapping over the Steps
+instead of abstracting all to some map function.
+
+I had a little trouble at the begining with tuples because I define the big step
+semantics (I kept those definitions on comments) to do not require the tuple to be
+a value in "fst" and "snd" and then I wasn't able to complete the proof of big-to-small.
+
+At the end I also included a proof of termination for the full language with
+tuples as the one we saw on class.
+
