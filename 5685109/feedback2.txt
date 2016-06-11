@@ -1,0 +1,17 @@
+Grading criteria:
+* determinism & uniqueness of normal forms proofs (1 / 1)
+* Definition of big step semantics (1 / 1)
+* Big-to-small and small-to-big lemmas (1 + 1 / 1 + 1)
+* Soundness and completeness of big-step semantics (0 + 1 / 1 + 1)
+  - completeness: 1 / 1
+  - soundness: 0 / 1
+    (only trivial "refl" cases covered)
+* Small step semantics, big step semantics and denotational semantics of pairs (1.5)
+  - denotational semantics: 0.5/0.5
+  - small step semantics: 0/0.5
+    only beta-reduction rules, and only for cases where both arguments of the pair have the same type,
+    and on arbitrary pairs, not just values (which will lead to problems with determinism)
+  - big step semantics: 0/0.5
+* Updating existing proofs to handle pairs (0/1.5)
+
+Result: 5.5 / 9 points
