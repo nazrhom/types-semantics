@@ -1,0 +1,12 @@
+Grade: 8.75/9
+
+Everything has been correctly implemented, the proposed solutions are often very close to the ones provided and in general very elegant.
+The only problem I encountered was the handling of the recursive calls in some of the proofs, however it was correctly 
+identified and acknowledged in the comments.
+
+The grading is full points everywhere, with a subtraction of 0.5 for the aforementioned issue. (Can also be thought as two 
+subtractions of 0.25: one from the soundness and completeness of big step semantics and the other from the extension of proofs 
+to pairs, since this is where the problem hit the most). 
+
+An additional 0.25 points are earned from the definition of a map function used to map the correct constructor over a list of 
+steps. This general function avoids a lot of boilerplate code that is instead present in the provided solution.
