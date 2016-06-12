@@ -1,0 +1,38 @@
+# Determinism and uniqueness of normal forms proofs
+
+1/1. The determinism proof looks cleaner than the model solution because the
+term arguments have been made implicit. I used `valuesDoNotStep` instead of
+`values-are-normal-forms`, but of course they are equivalent.
+
+# Definition of big-step semantics
+
+1/1. Isomorphic to model solution.
+
+# Big-to-small and small-to-big lemmas
+
+Big-to-small (1/1): this could have been more concise by avoiding some
+let-bindings.
+
+Small-to-big (1/1): the with-clause in `prepend-step` could have been avoided.
+
+# Soundness and completeness of big-step semantics
+
+Completeness (1/1): it was possible after all to combine the nested with-clauses
+into one. The trick was to first do evaluation of the value first, and the
+recursive call after the bar.
+
+Soundness (1/1): the proof is unnecessarily long, mostly due to the nested
+with-clauses that I failed to combine. Also, the term argument could have been
+made implicit.
+
+# Small-step semantics, big-step semantics, and denotational semantics of pairs
+
+1.5/1.5. Isomorphic to model solution.
+
+# Updating existing proofs to handle pairs
+
+1.5/1.5. Same remarks as before apply, but the proofs are correct.
+
+# Total
+
+(1 + 9) / (1 + 9)
