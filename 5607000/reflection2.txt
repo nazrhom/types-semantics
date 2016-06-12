@@ -1,0 +1,3 @@
+I've completed all parts of the exercise and Agda happily accepts all proofs.
+
+Result: 9 / 9 points
