@@ -1,0 +1,16 @@
+All proofs have been proven. I could easily have achieved some more conciseness with certain proofs
+and lemmas. The code is therefore much bigger than it needs to be.
+
+determinism & uniqueness of normal forms proofs: 1
+Definition of big step semantics: 1
+Big-to-small and small-to-big lemmas: 2
+Soundness and completeness of big-step semantics: 2
+Small step semantics, big step semantics and denotational semantics of pairs: 1.5
+Updating existing proofs to handle pairs: 1.5
+
+As said all proofs have been proven, so full points have to be given. Although one might argue
+that some points could be deducted for the lack of conciseness. But I don't know whether 
+points should be deducted for that reason, so I decide not to.
+
+Total: 9/9
+Grade: 10
