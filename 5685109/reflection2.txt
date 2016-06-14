@@ -1,0 +1,6 @@
+Grade 5/9
+
+There is not too much to say about this. Due to time mismanagement the extension to pairs was not really ever attempted.
+
+The grade is obtained by removing points from the big-step semantics soundness (which was left incomplete) and removing all 
+points regarding the extension as it was only roughly sketched out.
