@@ -1,0 +1,32 @@
+Quite some holes left, but in sub-expressions. Producing IsValue values seems to be the problem mostly.
+Some parts (holes) just need more destructuring, when calling progress I split on Left and Right, but
+twice the Left case is then not completed. The model solution shows the problem, should be calling progress
+on second term, not first.
+With deterministic one could either go with valuesDoNotStep and it get's messy, or like the model does,
+use values-are-normal-form. 
+
+
+* determinism & uniqueness of normal forms proofs
+	 Pretty much completed, slightly messy (see remark above) 0.9
+
+* Definition of big step semantics
+	Not sure why value-to-value for succ does not work like the model shows...
+	Structured differently (no IsZeroTrue/False, but with IsZeroZero and IsZeroSucc) which makes it miss minor part
+	and messes up other parts. 0.9
+
+* Big-to-small and small-to-big lemmas
+	Considering the slightly different structure mentioned above, this makes this almost work.
+	But the basics are there. Prepend-steps unnecessarily messed up, with explicit params it could
+	be worked out easier... 0.9 + 0.9
+
+* Soundness and completeness of big-step semantics
+	Done well. 1 + 1
+
+* Small step semantics, big step semantics and denotational semantics of pairs
+	As mentioned above, we do recursion on the first term when second term should be used. This
+	gets us stuck. here and there. 1.3
+
+* Updating existing proofs to handle pairs
+	This is done ok, considering the remarks above. 1.3
+
+Final mark: 8.2

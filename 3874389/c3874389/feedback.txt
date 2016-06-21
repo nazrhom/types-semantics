@@ -1,3 +1,4 @@
+= Exercise 1
 Almost every exercise has been completed fully (except the binary_inverse)
 Every proof is succinct with no unnecessary steps.
 As I did not complete the binary exercises some longer proofs
@@ -19,3 +20,26 @@ List chapter:
 Which totals at 46 stars, 41 were earned. Grade:
 	* No free points assumed: 8.9
 	* Usual 1 free point: 9.0
+
+
+
+= Exercise 2
+Normal forms: 1
+Big step semantics: 1
+Big-to-small: 1
+Small-to-big: 1
+Soundnes of big step: 1
+Completeness of big step: 1
+Small step, big step, denotational of pairs: 1.5
+Updating existings proofs for pairs: 1.5
+
+Total: 9.0
+Final mark: 10.0
+
+Overall all of the definitions are valid. However (as you might have seen
+yourself), lots of defintions are far longer than the ones form the solutions.
+Sometimes this is because the solution seperatus some definitions in seperate
+functions (and in reality is not that much shorter). However most of the times
+it is due to the way you used the pattern matching on arguments. By choosing
+the right pattern and forcing specific arguments to a specific value, most
+definitions can be shortened.

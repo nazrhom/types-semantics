@@ -1,0 +1,21 @@
+Most proofs were well done. Some could have been done a bit more concise by
+generalizing certain proofs of the same case.
+There were however a couple proofs (mostly for pairs) that were missing, including
+an incorrect definition of Pair which causes deterministic to be unprovable. 
+
+
+*determinism & uniqueness of normal forms proofs: 1
+*Definition of big step semantics: 1
+*Big-to-small and small-to-big lemmas: 1.7
+Total of 3 proofs missing in big-to-small, value-to-value and small-to-big.
+Since there were quite a few proofs to solve, I counted a missing proof as a 0.1 subtraction.
+*Soundness and completeness of big-step semantics: 2
+*Small step semantics, big step semantics and denotational semantics of pairs: 1.3
+Incorrect small step definition for Pair. Now determinism cannot be proved.
+*Updating existing proofs to handle pairs: 0.5
+progress is missing the pair case
+deterministic hasn't been proven for all pair small-step semantics.
+prepend-step hasn't been proven for all pair big-step semantics
+
+Total: 7.5/9
+Grade: 8.3

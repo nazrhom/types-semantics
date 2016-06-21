@@ -1,0 +1,12 @@
+Normal forms: 0.9 (2 holes are present in deterministic)
+Big step semantics: 1.0
+Big-to-small: 1.0
+Small-to-big: 0.9 (two holes in val-to-val and prepend-step)
+Soundnes of big step: .2 (nearly no definition at all)
+Completeness of big step: 1.0
+Small step, big step, denotational of pairs: .3 (definitiosn for fst/snd are
+missing)
+Updating existings proofs for pairs: 0.0
+
+Total: 5.3
+Final mark: 6.3

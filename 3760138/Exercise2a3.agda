@@ -282,8 +282,9 @@ uniqueness-of-normal-forms t t₁ .t₁ (Cons x step₁) (Cons x₁ step₂) nf�
 data _⇓_ : {ty : Type} -> Term ty → Value ty → Set where
   B-True : true ⇓ vtrue
   B-False : false ⇓ vfalse
-  B-If-True : forall {ty} {c : Term BOOL} {th el : Term ty} {v : Value ty } -> c ⇓ vtrue -> th ⇓ v -> if c then th else el ⇓ v
-  B-If-False : forall {ty} {c : Term BOOL} {th el : Term ty} {v : Value ty } -> c ⇓ vfalse -> el ⇓ v -> if c then th else el ⇓ v
+  -- Reviewer modification for parse error
+  B-If-True : forall {ty} {c : Term BOOL} {th el : Term ty} {v : Value ty } -> c ⇓ vtrue -> th ⇓ v -> (if c then th else el) ⇓ v
+  B-If-False : forall {ty} {c : Term BOOL} {th el : Term ty} {v : Value ty } -> c ⇓ vfalse -> el ⇓ v -> (if c then th else el) ⇓ v
   B-Zero : zero ⇓ vnat Zero
   B-Succ : { t : Term NAT} { v : Nat} -> t ⇓ vnat v -> succ t ⇓ vnat (Succ v)
   B-IsZero-True :  { t : Term NAT } -> t ⇓ vnat Zero -> iszero t ⇓ vtrue
