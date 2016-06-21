@@ -1,0 +1,19 @@
+From: 5597250
+To: 5597250
+
+Most of the proofs are correct. However, there are still some empty cases. I graded myself 7.9 out of the 9 points.
+
+* determinism & uniqueness of normal forms proofs 1
+* Definition of big step semantics 1
+* Big-to-small and small-to-big lemmas: 1.9
+one case value-to-value is missing.
+* Soundness and completeness of big-step semantics: 2
+Complete and sound is proving
+* Small step semantics, big step semantics and denotational semantics of pairs: 0.5
+Several cases are missing.
+* Updating existing proofs to handle pairs 1.5
+Complete and sound proofs for pairs
+
+
+1 + 1 + 1.9 + + 2 + 1.5 + 0.5 = 7.9
+Total: 7.9/9
