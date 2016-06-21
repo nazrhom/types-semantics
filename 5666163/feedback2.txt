@@ -1,0 +1,13 @@
+From: 5597250
+To: 5666163
+
+Unfortunately, most of the cases are not complete. So by looking at the grading guidelines the total points I can give is 3.3 out of the 9 points.
+
+determinism & uniqueness: .8
+big step semantics: 1
+big-to-small & small-to-big: 1
+Soundness and completeness: .5
+Pairs: 0
+
+.8 + 1 + 1 + .5 = 3.3
+Total: 3.3/9
