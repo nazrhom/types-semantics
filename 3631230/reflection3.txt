@@ -1,0 +1,57 @@
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+    -- (0.5) Examples cover the basics
+    -- (0.4) Mention of book rules is a bit of a shortcut
+    -- (2) basic analysis ok, poisoning implemented but not fully correct
+
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.4) Error example would be good. Otherwise ok.
+  -- (0.4) Constraints dealing unclear
+  -- (0.8) Parse problem, unclear dealing with constraints (and perhaps incorrect)
+
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0) Not there
+  -- (0.4) Seems ok, again constraint dealing unclear.
+  -- (0) Not there...
+
+(iv)  1   point or less
+  -- (0) not implemented
+
+   
+General readability of the pdf and the code: 1 point or less
+  -- (0.8) alg_w and u  (code) are not commented well, though the books
+  provides this, but it could be better. Otherwise it's ok.
+
+Issues to think of: 
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (don't forget to run it on examples where it 
+    makes a difference)
+
+  -- (0.8) As stated explicitly, this should have been implemented apart
+      from the monomorphic code. Nevertheless, this is the implementation we
+      actually run, so we can see how this goes. It goes very well. However,
+      "partialif.fun" show h != k in signature, which should be the case right?
+
+Score for:
+(i)        : 2.9
+(ii)       : 1.6
+(iii)      : 0.4
+(iv)       : 0
+Readability: 0.8
+Bonus      : 0
+------------------
+Total score: 5.7
+(between 0 and 11)
