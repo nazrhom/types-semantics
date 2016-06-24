@@ -43,3 +43,70 @@ functions (and in reality is not that much shorter). However most of the times
 it is due to the way you used the pattern matching on arguments. By choosing
 the right pattern and forcing specific arguments to a specific value, most
 definitions can be shortened.
+
+
+
+
+= Exercise 3
+
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+    -- (0.5 point) Technically there are no examples of the very simple constructs,
+    but this is forgiven
+    -- (0.3) No rule diagrams, no split between mono/poly-morphic. 
+    -- (2.3) Code looks great (hard to judge isolated with all the extensions, no
+    separate monomorphic code!)
+
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.5) Great
+  -- (0.3) As stated by docs, informal only.
+  -- (1) This is great
+
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.5) Great
+  -- (0.4) Again no precise rules etc. Nice attempt in natural language though!
+  -- (1.5) This is great
+
+(iv)  1   point or less
+  -- (0) not implemented
+
+   
+General readability of the pdf and the code: 1 point or less
+  -- (0.8) Typesystem module is commented nicely. ConstrainSolver has trivial
+  comments, so that's less nice, and what's up with the View class? Going towards
+  polymorphic and the changes required are slightly unclear.
+
+Issues to think of: 
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (don't forget to run it on examples where it 
+    makes a difference)
+
+  -- (0.8) As stated explicitly, this should have been implemented apart
+      from the monomorphic code. Nevertheless, this is the implementation we
+      actually run, so we can see how this goes. It goes very well. However,
+      "partialif.fun" show h != k in signature, which should be the case right?
+
+Score for:
+(i)        : 3.1
+(ii)       : 1.8
+(iii)      : 2.4
+(iv)       : 0
+Readability: 0.8
+Bonus      : 0.8
+------------------
+Total score: 8.9
+(between 0 and 11)
+
