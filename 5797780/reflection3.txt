@@ -1,0 +1,61 @@
+# Part I
+
+I wrote quite a lot of code. Perhaps some things could have been implemented in
+a simpler manner. On the other hand, quite a significant portion of my code is
+dedicated to non-essential things such as pretty-printing types and simplifying
+type variables before printing.
+
+Inference works correctly on the vast set of example programs. Care has been
+taken to avoid poisioning through the use of subtyping. Changes to the typing
+rules have been documented in the readme.
+
+Examples: 0.5/0.5
+Docs:     0.5/0.5
+Code:     2.5/2.5
+
+# Part II
+
+Construction and destructuring of pairs works properly, also when wrapping a
+function in a pair and extracting it again later. Care has been taken to avoid
+poisioning. Typing rules for pairs have been documented in the readme. There
+are sufficient examples.
+
+Examples: 0.5/0.5
+Docs:     0.5/0.5
+Code:     1.0/1.0
+
+# Part III
+
+Construction and destructuring of lists works properly, also when wrapping a
+function in a list and extracting it again later. Care has been taken to avoid
+poisioning. Inference still works when functions, pairs, and lists are combined.
+Typing rules for lists have been documented in the readme. There are sufficient
+examples.
+
+Examples: 0.5/0.5
+Docs:     0.5/0.5
+Code:     1.5/1.5
+
+# Part IV
+
+Not implemented.
+
+# General readability of the pdf and code
+
+As the author, my own biased view is that my code and readme were clear and
+readable. Usage of a monad for inference means that the essence of the algorithm
+is clear from the code, it is not littered with error handling or stacks of
+substitutions. Still, there is a bit of noise through the "stash" functionality.
+There is also a bit of boilerplate, for the functor instance, and for the
+two `flatMap` implementations.
+
+Score for  : 5797780
+(i)        : 3.5
+(ii)       : 2.0
+(iii)      : 2.5
+(iv)       : 0.0
+Readability: 1.0
+Bonus      : 0.0
+------------------
+Total score: 9.0
+(between 0 and 11)
