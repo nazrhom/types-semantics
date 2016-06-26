@@ -1,0 +1,69 @@
+# Part I
+
+The analysis seems to work correctly, and there are quite a lot of examples to support that.
+Unfortunately, the inference algorithm has been programmed in a way that only allows to see
+the type of the top-most expression, as opposed to returning an annotated syntax tree
+containing the type of every sub-expression.
+Not having those intermediate types makes verifying the correctness of the analysis a lot
+harder (by e.g. returning nested pairs containing all the functions we're interested in),
+and would, in a real compiler, defeat the purpose of having the analysis in the first place,
+since most of the information gained is thrown away.
+That said, adapting the analysis to keep intermediate results shouldn't require big changes in
+how the algorithm works, and therefore, only 0.5 points have been deducted.
+
+Examples: 0.5
+Docs:     0.5
+Code:     2.0
+
+# Part II
+
+Lists have been implemented, sufficiently documented and their functionality is demonstrated by the examples.
+
+Examples: 0.5
+Docs:     0.5
+Code:     1.0
+
+# Part III
+
+Lists have been implemented and their functionality is demonstrated by the examples. While
+the type-rules in the PDF are correct, they lack any further explanation (especially
+concerning the treatment of the list tails).
+
+Examples: 0.5
+Docs:     0.25
+Code:     1.5
+
+# Readability
+
+The PDF file and the code are perfectly readable. Especially the latter contains a lot of
+comments describing the inner workings of the analysis. Furthermore, substitutions have been
+hidden by choosing a monadic implementation. This allows the reader to easily grasp the
+concepts of the analysis without being hindered by the (quite significant) noise of manual
+substitutions.
+
+And finally, a few suggestions for reducing boilerplate (of which there isn't too much in the
+first place, hence this has no effect on the resulting grade and is merely meant as constructive
+feedback):
+
+   - automatically derive Functor instances with the DeriveFunctor GHC-extension
+   - the "lens" package might be worth investigating, especially when updating
+     nested data structures (e.g. the AnalysisContext)
+   - "foldMap" is something that is provided as a generic traversal in a few
+     generic programming libraries. In particular, "lens" provides "transformM"
+     (for transformations under an arbitrary monad, in your case State).
+     Together with GHCs ability to automatically derive Data and Typeable, this
+     can save quite a lot of lines (at the expense of traversal speed).
+
+
+# Score
+
+Score for:
+(i)        : 3.0
+(ii)       : 2.0
+(iii)      : 2.25
+(iv)       : 0
+Readability: 1.0
+Bonus      : 0
+------------------
+Total score: 8.25
+(between 0 and 11)
