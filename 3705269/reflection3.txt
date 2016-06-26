@@ -1,0 +1,17 @@
+(i)        : 2.0
+             Basic implementation does not work as expected, some small bugs
+             present. No documentation.
+(ii)       : 0.0
+             Not implemented
+(iii)      : 0.0
+             Not implemented
+(iv)       : 0.0
+             Not implemented
+Readability: 1.0
+             Code is quite readible and is nearly identical to the formal
+             specification.
+Bonus      : 0.0
+             Not implemented
+------------------
+Total score: 3.0
+

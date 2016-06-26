@@ -1,0 +1,24 @@
+Overall a quite nice implementation. Also a nice variety of examples are
+included, altough some formatting in the examples could improve readability.
+
+(i)        : 2.5
+             Implemented, as the doc states not all constraints are solved
+             completely. Also no documentation about this part, but don't
+             really know what to document about it.
+(ii)       : 2.0
+             Implemented and seems to work OK.
+(iii)      : 2.5
+             Implemented and seems to work OK.
+(iv)       : 0.0
+             Not implemented
+Readability: 0.5
+             Code could be a lot clearer. Try to stick to 72 characters per
+             line (or 80 at the very most). Never use a mixed indentation of
+             tabs and spaces in Haskell, as no one can garuantee the width of
+             a tab character, this may lead to compilation errors.
+             Documentation was nice.
+Bonus      : 0.0
+             Not implemented
+------------------
+Total score: 7.5
+
