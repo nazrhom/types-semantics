@@ -1,0 +1,16 @@
+Very good solution. Extensive examples with explanations, good documentation of new rules. 
+Implementation seems to work great; it still has some poisoning, but that cannot be avoided and proper measures were taken in the subeffecting to remove part of the poisoning.
+There does seem to be a minor mistake in the List-Intro-Cons rule, where the tail is required to contain annotation pi of the newly constructed Cons cell. I think this is incorrect, but I am unsure. 
+Apart from that, no real errors could be found.
+As far as I could find, the bonus exercise regarding polyvariance was not implemented.
+
+Score for: 5607000
+(i)        : 3.5
+(ii)       : 2
+(iii)      : 2.25
+(iv)       : 1
+Readability: 0.5
+Bonus      : 0
+------------------
+Total score: 9.25
+(between 0 and 11)
