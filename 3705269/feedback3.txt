@@ -1,0 +1,51 @@
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iv)  1   point or less
+
+General readability of the pdf and the code: 1 point or less
+
+Issues to think of:
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+
+Bonuspoint:
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (don't forget to run it on examples where it 
+    makes a difference)
+
+-- Grading
+
+(i) The code is not complete, there is an undefined in the algorithm W
+implementation. The examples included do not work at all. There is no
+documentation either. At least the implementation uses unicode symbols and looks
+really cool.
+
+(ii)  There is no implementation, examples or documentation.
+(iii) There is no implementation, examples or documentation.
+(iv)  There is no documentation
+
+(Readability)
+
+There is no report.
+
+Score for:
+(i)        : 0.5
+(ii)       : 0
+(iii)      : 0
+(iv)       : 0
+Readability: 0.5
+Bonus      : 0
+------------------
+Total score: 1.0
+

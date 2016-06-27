@@ -1,0 +1,87 @@
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iv)  1   point or less
+
+General readability of the pdf and the code: 1 point or less
+
+Issues to think of:
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+
+Bonuspoint:
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (don't forget to run it on examples where it
+    makes a difference)
+
+-- Grading
+
+(i)
+
+The base implementation works correctly. It is able to perform type inference
+and annotate types with usage program points.  Poisoning is avoided by
+implementing subeffecting which is explained well in the report.  The examples
+on the slides and other provided work perfectly.
+
+0.5 examples + 0.5 docs + 2.5 code
+
+(ii)
+
+Implementation of Pairs works properly. Even in the case were pairs are nested
+or contain functions inside the system is able to track program points. The
+type rules are correctly given and explained in the report and their
+implementation is reflected in the code.
+
+0.5 examples + 0.5 docs + 1.0 code
+
+(iii)
+
+List implementation is well done. In the examples, we can find typical functions
+on lists such map, head, or tail and their application to actual lists. It is
+able to keep track of nested program points of list elements. The type rules are
+explained in the report and their implementation reflected in the code.
+
+0.5 examples + 0.5 docs + 1.5 code
+
+(iv)  The type rules for general datatypes are given in the report and they are
+explained by comparing them to the rules for pairs and lists.
+
+1.0
+
+(Readability)
+
+As the author of the work I think that the code is very readable.  It makes use
+of a lot of typeclasses like functors, bifunctors, bifoldable etc which make the
+code easier to maintain and enforce type invariants along the functions.
+
+The implementation of algorithm W makes use of a monad transformer stack with error
+handling and fresh name generation that helps
+
+The report is easily readable.
+
+1.0
+
+(Bonus)
+
+No polyvariance implementation is included.
+
+Score for:
+(i)        : 3.5
+(ii)       : 2
+(iii)      : 2.5
+(iv)       : 1
+Readability: 1
+Bonus      : 0
+------------------
+Total score: 10.0
+
