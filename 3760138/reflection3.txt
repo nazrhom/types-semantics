@@ -1,0 +1,17 @@
+Only a partial solution, with notable missing parts. 
+Subeffecting was implemented poorly.
+Very little documentation; no comments or pdf.
+Pairs were implemented, but not fully.
+Part 3 and 4 of the exercise were completely skipped.
+Some good examples were provided, but without documentation.
+
+Score for: 3760138
+(i)        : 2.5
+(ii)       : 0.5
+(iii)      : 0
+(iv)       : 0
+Readability: 0.25
+Bonus      : 0
+------------------
+Total score: 3.25
+(between 0 and 11)
