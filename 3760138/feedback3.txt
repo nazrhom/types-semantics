@@ -1,0 +1,112 @@
+# Part I
+
+Extending the syntax with explicit program points is an easy solution and it
+allows for more meaningful names than automatically generated ones, but on the
+other hand it would have been nice if unique program points were assigned
+automatically.
+
+I like how you introduced a type class to deal with the awkward distinction
+between types and type schemes that arises sometimes.
+
+The type name `Nat` is misleading, as the parser also allows negative integers,
+not only natural numbers, and there is a subtract operator that never fails.
+
+Because the chaining of substitutions is handled explicitly, it is difficult to
+recognise the essence of algorithm W in your implementation; the important parts
+get lost in "substitution noise".
+
+Error handling using the `error` function is in this case an appropriate
+pragmatic approach, but if this code were to be used in a larger application, a
+more robust and composable way of error handling (such as the `Either` type)
+would be desirable.
+
+Correctness of the implementation:
+
+ * Inference of literals: works.
+
+ * Inference of expressions involving operators: works, also in combination with
+   functions, however it happily types ill-typed expressions. For instance, it
+   claims that `true + false` has type `TNat`. When used inside a function, type
+   errors are detected.
+
+ * Conditionals: non-boolean conditions are rejected properly. Unification of
+   the branches works.
+
+ * Functions and recursive functions: works.
+
+ * Let-bindings: works. Polymorphic functions work properly.
+
+Poisioning and subeffecting:
+
+ * Nested id functions are typed correctly. Function types unify in
+   conditionals.
+
+ * Poisioning was not prevented. Consider the following program:
+
+       let f = fn f x => x in
+       let g = fn g x => x in
+       let h = if true then f else g in
+       f
+
+   The inferred type of this program is a function a8 -> a8 created at b2, with
+   the constraint that b2 is f or g.
+
+The examples were basic and did not cover several corner cases. The syntax
+adaptations were explained adequately in the readme.
+
+Examples: 0.3/0.5
+Docs:     0.5/0.5
+Code:     1.5/2.5
+
+# Part II
+
+Construction and destructuring of pairs works properly. Pairs suffer from the
+same poisioning issue as functions:
+
+    let x = pair p (2, 3) in
+    let y = pair q (5, 7) in
+    let z = if true then x else y in
+    x
+
+This program is inferred to have type (Nat, Nat) constructed at either p or q.
+
+Putting a function in a pair and extracting it later correctly preserves its
+annotations. Picking from pairs containing functions correctly merges the
+annotations.
+
+The examples did not cover cases such as picking a pair in a conditional. No
+typing rules were mentioned in the readme.
+
+Examples: 0.4/0.5
+Docs:     0.0/0.5
+Code:     0.8/1.0
+
+# Part III
+
+Not implemented.
+
+# Part IV
+
+Not implemented.
+
+# General readability of the pdf and code
+
+There was no pdf, only a small readme text file. The build/run instructions did
+not work for me, as the dependencies are not part of a default Haksell
+distribution, and a Cabal file was missing. I also had to remove the module
+declaration from main, otherwise `run` is a private function not accessible from
+GHCi started as `cabal repl`.
+
+Regarding the code, comments were very scarce, and several places would have
+benefitted from a short note on what the code is doing, and what is is used for.
+
+Score for  : 3760138
+(i)        : 2.3
+(ii)       : 1.2
+(iii)      : 0.0
+(iv)       : 0.0
+Readability: 0.1
+Bonus      : 0.0
+------------------
+Total score: 3.6
+(between 0 and 11)
