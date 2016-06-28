@@ -1,0 +1,54 @@
+Feedback of 5685109 by 3874389
+
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+-- (0.5) Examples look fine
+-- (0.5) Not sure what docs there are to grade
+-- (2.2) In a few cases there are unification errors
+
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+-- (0.5) Examples look fine
+-- (0.3) Formal typing rules are given, but there is no explanation
+-- (1.0) Works fine
+
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+-- (0.5) Examples look fine
+-- (0.3) Formal typing rules are given, but there is no explanation
+-- (1.2) Poisoning has not been solved for lists
+(iv)  1   point or less
+-- (0.1) Typing rule has been given
+-- No code has been implemented
+   
+General readability of the pdf and the code: 1 point or less
+-- (0.5) Code contains no comments, which made it quite difficult to understand what is going on. Furthermore,
+         there was little documentation for lists and pairs.
+
+Issues to think of: 
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  No
+  - if yes, give up to one point (don't forget to run it on examples where it 
+    makes a difference)
+
+Score for:
+(i)        : 3.3
+(ii)       : 1.8
+(iii)      : 2.2
+(iv)       : 0.1
+Readability: 0.5
+Bonus      : 0
+------------------
+Total score: 7.9
+(between 0 and 11)
