@@ -1,0 +1,22 @@
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iv)  1   point or less
+   
+Score for:
+(i)        : 2.0
+Unfortunately, I did not solve the constraints complelety. Also, I forgot to add the type rules.
+(ii)       : 2.0
+From my understanding how it should work, it works. So 2 points
+(iii)      : 2.5
+From my understanding how it should work, it works. So 2.5 points
+(iv)       : 0.0
+Did implement this part
+Readability: 0.75
+I think it is readeble, because I splitted the file into several parts. However, there is still room for some improvement. So I gave for this part 0.75. 
+Bonus      : 0.0
+------------------
+Total score: 7.25
+(between 0 and 11)
