@@ -1,0 +1,24 @@
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+(iv)  1   point or less
+   
+The code looks very good. Examples cover most of the important cases. Subeffecting works. Typing rules included. Only the polyvariant is not implemented. 
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (don't forget to run it on examples where it 
+    makes a difference)
+
+Score for:
+(i)        : 3.5
+(ii)       : 2.0
+(iii)      : 2.5
+(iv)       : 1.0
+Readability: 1.0
+Bonus      : 0.0
+------------------
+Total score: 10
+(between 0 and 11)
