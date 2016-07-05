@@ -1,0 +1,57 @@
+
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+    -- (0.5) Examples cover the basics
+    -- (0.4) Documentation for base analysis is ok
+    -- (2.5) The base CFA should be implemented correctly and is working on the provided examples
+
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.5) Examples cover different cases
+  -- (0.4) Rules are provided, some explanation in the docs could have been helpful
+  -- (1) Pairs are dealt with correctly.
+
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.5) Examples cover different cases
+  -- (0.4) Rules are provided, some explanation in the docs could have been helpful
+  -- (1.2) Some poisoning is still present for lists. There is also a bug in 
+  dealing with the tail of a list  
+
+(iv)  1   point or less
+  -- (0.8) Rules are provided, some explanation in the docs could have been helpful
+
+   
+General readability of the pdf and the code: 1 point or less
+  -- (0.2) The code is not sufficiently commented or is implemented in a 
+  concise way. The pdf is very short and just provides the basic rules
+  with no added comments.  
+
+Issues to think of: 
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (dont forget to run it on examples where it 
+    makes a difference)
+
+
+
+Score for:
+(i)        : 3.4
+(ii)       : 1.9
+(iii)      : 2.1
+(iv)       : 0.8
+Readability: 0.2
+Bonus      : 0
+------------------
+Total score: 8.4
+(between 0 and 11)
