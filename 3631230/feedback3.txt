@@ -1,0 +1,60 @@
+
+To grade the type and effect systems submission, use the following:
+
+(i)   3.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+    -- (0.5) Examples cover the basics
+    -- (0.5) Documentation for base analysis is comprehensive
+    -- (1.8) The implementation does not use the generalize or instantiate 
+    functions presented in the slides leading to some errors.
+    In addition some of the poisoning is not correctly dealt with.
+    
+(ii)  2   points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0.3) Working examples only cover very basic cases
+  -- (0.4) Constraints could have been explained in more detail
+  -- (0.6) The implementation does not appear to be complete, constraints are not properly 
+  dealt with in this case and some of the examples are not parsable.
+
+(iii) 2.5 points or less (0.5 for examples, 0.5 for docs, rest for code)
+  -- (0) Not there
+  -- (0.4) Constraints could have been explained in more detail
+  -- (0) Not there
+
+(iv)  1   point or less
+  -- (0) Not there
+
+   
+General readability of the pdf and the code: 1 point or less
+  -- (0.8) The code is sufficently readable, there are however some choices
+  in the implementation i.e. the generation of fresh variables, that can be 
+  improved. The pdf goes into a lot of details about the basic analysis but 
+  information about the extensions is a bit lacking
+
+Issues to think of: 
+  * do examples cover important cases, like list of functions, functions on
+    pairs?
+  * is subeffecting done in a way that tries to prevent poisoning? You can
+    usually tell from the unification rule for functions (equating the
+    annotation variables in that case usually means that active measures
+    against poisoning were not taken).
+  * Is the flow of the case statements done well?
+  * does the documentation provide the necessary type rules and explanations
+  * maybe it goes without saying, but if some part is partially answered,
+    you should estimate the percentage that was done correctly.
+    
+Bonuspoint: 
+  - is there a polyvariant implementation?
+  - if yes, give up to one point (dont forget to run it on examples where it 
+    makes a difference)
+
+
+
+Score for:
+(i)        : 2.8
+(ii)       : 1.3
+(iii)      : 0.4
+(iv)       : 0
+Readability: 0.8
+Bonus      : 0
+------------------
+Total score: 5.3
+(between 0 and 11)
